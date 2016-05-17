@@ -51,6 +51,13 @@ $app->group('/themes', function () {
 	$this->post("/add", 'ThemeController:add')->setName("addWalk");
 });
 
+// Languages
+$app->group('/languages', function () {
+	$this->get("/getAll", 'LanguageController:getAll')->setName("getAllLanguages");
+	$this->get("/getByID/{id:[0-9]+}", 'LanguageController:getByID')->setName("getLanguageByID");
+	$this->post("/add", 'LanguageController:add')->setName("addLanguage");
+});
+
 /*
  * FINISH
  */

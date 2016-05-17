@@ -26,6 +26,10 @@ class LanguageDAO {
     }
 
     public static function addLanguage($language_code, $language_name) {
+        if(!Verify::languageCode($language_code)) {
+            throw new Exception('Invalid language code.');
+        }
+
         return DAOTemplate::insert(self::TABLE_NAME, array('language_code'=>$language_code, 'language_name'=>$language_name));
     }
 }

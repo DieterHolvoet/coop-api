@@ -56,11 +56,11 @@ class WalkDAO {
     }
     
     public static function addWalk($languages, $theme_id, $walk_duration, $walk_distance) {
-        if(!filter_var($walk_duration, FILTER_VALIDATE_INT, array("options" => array("min_range"=>0, "max_range"=>1440)))) {
+        if(!Verify::integerWithRange($walk_duration, 0, 1440)) {
             throw new Exception('Duration out of range');
-        }
+        }   
 
-        if(!filter_var($walk_distance, FILTER_VALIDATE_INT, array("options" => array("min_range"=>0, "max_range"=>7000)))) {
+        if(!Verify::integerWithRange($walk_distance, 0, 7000)) {
             throw new Exception('Walk distance out of range');
         }
 

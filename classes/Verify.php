@@ -29,4 +29,12 @@ class Verify
             return !!preg_match('/^[a-f0-9]{6}$/i', $color);
         }
     }
+
+    public static function languageCode($code) {
+        return (gettype($code) == 'string' && strlen($code) == 2);
+    }
+
+    public static function integerWithRange($int, $min, $max) {
+        return filter_var($int, FILTER_VALIDATE_INT, array("options" => array("min_range"=>$min, "max_range"=>$max)));
+    }
 }
