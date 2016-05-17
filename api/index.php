@@ -41,12 +41,8 @@ $c['notFoundHandler'] = function ($c) {
  * ROUTES
  */
 
-$app->get('/test', function ($request, $response, $args) {
-	return $response->withStatus(200)->write('getAll');
-});
-
 $app->get('/', function ($request, $response, $args) {
-	return $response->withStatus(200)->write('Hello World!');
+	return $response->withStatus(200)->write('<h1>Welcome to the COOP API! Please refer to the documentation for more information on all endpoints.');
 });
 
 // Walks

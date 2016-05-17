@@ -10,10 +10,25 @@ class WalkDAO {
     public static function getAll() {
         return DAOTemplate::getAll(self::TABLE_NAME, "creation_date");
     }
+
+    public static function getAllStops($walk_id) {
+        $stops = DAOTemplate::executeSQL("SELECT * FROM " . self::MAPS_TABLE_NAME . " WHERE walk_id = " . $walk_id . " ORDER BY stop_sequence", array());
+        for($i = 0; $i < count($stops); $i++) {
+            $stop_type = $stops[$i]['stop_type'];
+            $stops[$i][$stop_type.'_id'] = $stops[$i]['stop_id'];
+            unset($stops[$i]['stop_id']);
+            unset($stops[$i]['walk_id']);
+            unset($stops[$i]['walk_maps_id']);
+        }
+        return $stops;
+    }
     
     public static function getWalkByID($walk_id) {
         $data = DAOTemplate::getByID(self::TABLE_NAME, "walk_id", $walk_id)[0];
-        if(!empty($data)) $data['translations'] = WalkDAO::getAllTranslations($walk_id);
+        if(!empty($data)) {
+            $data['translations'] = WalkDAO::getAllTranslations($walk_id);
+            $data['stops'] = WalkDAO::getAllStops($walk_id);
+        }
         return $data;
     }
     

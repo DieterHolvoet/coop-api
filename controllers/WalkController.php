@@ -23,6 +23,23 @@ class WalkController
     public static function add(Request $request, Response $response) {
         $data = $request->getParsedBody();
         $walk_id = WalkDAO::addWalk($data['translations'], $data['theme_id'], $data['walk_duration'], $data['walk_distance']);
+
+        if(isset($data['stops'])) {
+            foreach ($data['stops'] as $stop) {
+                $location_id = LocationDAO::addLocation($stop['location']['translations'], $stop['location']['location_lat'], $stop['location']['location_lon'], (int) $stop['location']['location_house_number'], $stop['location']['location_postal_code']);
+                switch($stop['stop_type']) {
+                    case StopTypes::POI:
+                        WalkDAO::addPoi($walk_id, $stop['translations'], $location_id);
+                        break;
+
+                    case StopTypes::WAYPOINT:
+                        $media_id = MediaDAO::addMedia(array(), WaypointDAO::getMediaTypeID(), $stop['media_filename']);
+                        WalkDAO::addWaypoint($walk_id, $stop['translations'], $location_id, $media_id);
+                        break;
+                }
+            }
+        }
+
         return self::encode(array('walk_id'=>$walk_id), $response);
     }
 
