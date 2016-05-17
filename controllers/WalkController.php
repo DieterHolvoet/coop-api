@@ -27,15 +27,19 @@ class WalkController
         if(isset($data['stops'])) {
             foreach ($data['stops'] as $stop) {
                 $location_id = LocationDAO::addLocation($stop['location']['translations'], $stop['location']['location_lat'], $stop['location']['location_lon'], (int) $stop['location']['location_house_number'], $stop['location']['location_postal_code']);
-                switch($stop['stop_type']) {
-                    case StopTypes::POI:
-                        WalkDAO::addPoi($walk_id, $stop['translations'], $location_id);
-                        break;
 
-                    case StopTypes::WAYPOINT:
-                        $media_id = MediaDAO::addMedia(array(), WaypointDAO::getMediaTypeID(), $stop['media_filename']);
-                        WalkDAO::addWaypoint($walk_id, $stop['translations'], $location_id, $media_id);
-                        break;
+                if($stop['stop_type'] == StopTypes::POI) {
+                    $poi_id = WalkDAO::addPoi($walk_id, $stop['translations'], $location_id);
+
+                    if(isset($stop['media'])) {
+                        foreach($stop['media'] as $media) {
+                            PoiDAO::addMedia($poi_id, $media['translations'], MediaDAO::getMediaTypeIDByName($media['media_type_name']), $media['media_filename']);
+                        }
+                    }
+
+                } else if($stop['stop_type'] == StopTypes::WAYPOINT) {
+                    $media_id = MediaDAO::addMedia(array(), WaypointDAO::getMediaTypeID(), $stop['media_filename']);
+                    WalkDAO::addWaypoint($walk_id, $stop['translations'], $location_id, $media_id);
                 }
             }
         }

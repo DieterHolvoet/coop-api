@@ -59,7 +59,7 @@ ThemeDAO::addTheme(array(
 ), '9E1F63');
 
 // Insert walks
-$walk_1_id = WalkDAO::addWalk(
+/*$walk_1_id = WalkDAO::addWalk(
     array(
         'nl'=>array(
             'walk_title'=>'Wandeling 1',
@@ -251,3 +251,4 @@ PoiDAO::addMedia(
     MediaDAO::getMediaTypeIDByName('Photo'),
     'walk1_4.jpeg'
 );
+*/
