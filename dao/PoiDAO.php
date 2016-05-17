@@ -11,6 +11,10 @@ class PoiDAO {
     const TABLE_NAME = 'pois';
     const DETAILS_TABLE_NAME = 'poi_details';
 
+    public static function getPoiByID($poi_id) {
+        return DAOTemplate::getByID(self::TABLE_NAME, 'poi_id', $poi_id);
+    }
+
     public static function addPoi($languages, $location_id) {
         $poi_id = DAOTemplate::insert(self::TABLE_NAME, array(
             'poi_unlock_code'=>PoiDAO::generateUnlockCode(),

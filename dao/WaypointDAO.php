@@ -10,6 +10,10 @@ class WaypointDAO {
     const TABLE_NAME = 'waypoints';
     const DETAILS_TABLE_NAME = 'waypoint_details';
 
+    public static function getWaypointByID($waypoint_id) {
+        return DAOTemplate::getByID(self::TABLE_NAME, 'waypoint_id', $waypoint_id);
+    }
+
     public static function addWaypoint($languages, $location_id, $media_id) {
         $waypoint_id = DAOTemplate::insert(self::TABLE_NAME, array(
             'media_id'=>$media_id,

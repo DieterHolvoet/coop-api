@@ -13,6 +13,7 @@ class WalkDAO {
         for($i = 0; $i < count($walks); $i++) {
             $walks[$i]['walk_title'] = WalkDAO::getTranslation($walks[$i]['walk_id'], LanguageDAO::getLanguageIDByCode($language_code))['walk_title'];
             $walks[$i]['walk_description'] = WalkDAO::getTranslation($walks[$i]['walk_id'], LanguageDAO::getLanguageIDByCode($language_code))['walk_description'];
+            $walks[$i]['walk_average_location'] = WalkDAO::getAverageLocation($walks[$i]['walk_id']);
         }
 
         return $walks;
@@ -23,10 +24,22 @@ class WalkDAO {
 
         for($i = 0; $i < count($stops); $i++) {
             $stop_type = $stops[$i]['stop_type'];
-            $stops[$i][$stop_type.'_id'] = $stops[$i]['stop_id'];
+            $stops[$i][$stop_type . '_id'] = $stops[$i]['stop_id'];
+
             unset($stops[$i]['stop_id']);
             unset($stops[$i]['walk_id']);
             unset($stops[$i]['walk_maps_id']);
+
+            if($stop_type == StopTypes::POI) {
+                $poi_id = $stops[$i]['poi_id'];
+                $location_id = PoiDAO::getPoiByID($poi_id)[0]['location_id'];
+                $stops[$i]['location'] = LocationDAO::getLocationByID($location_id)[0];
+
+            } else if($stop_type == StopTypes::WAYPOINT) {
+                $waypoint_id = $stops[$i]['waypoint_id'];
+                $location_id = WaypointDAO::getWaypointByID($waypoint_id)[0]['location_id'];
+                $stops[$i]['location'] = LocationDAO::getLocationByID($location_id)[0];
+            }
         }
 
         return $stops;
@@ -35,6 +48,7 @@ class WalkDAO {
     public static function getWalkByID($walk_id) {
         $data = DAOTemplate::getByID(self::TABLE_NAME, "walk_id", $walk_id)[0];
         if(!empty($data)) {
+            $data['walk_average_location'] = WalkDAO::getAverageLocation($walk_id);
             $data['translations'] = WalkDAO::getAllTranslations($walk_id);
             $data['stops'] = WalkDAO::getAllStops($walk_id);
         }
@@ -137,6 +151,14 @@ class WalkDAO {
     public static function getWalkStopsCount($walk_id) {
         $result = DAOTemplate::executeSQL("SELECT MAX(stop_sequence) AS count FROM " . self::MAPS_TABLE_NAME . " WHERE walk_id = " . $walk_id, array());
         return $result[0]['count'];
+    }
+    
+    public static function getAverageLocation($walk_id) {
+        $locations = array();
+        foreach(WalkDAO::getAllStops($walk_id) as $stop) {
+            array_push($locations, array($stop['location']['location_lat'], $stop['location']['location_lon']));
+        }
+        return LocationHelper::getCenterFromDegrees($locations);
     }
 }
 

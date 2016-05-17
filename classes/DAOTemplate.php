@@ -119,7 +119,7 @@ class DAOTemplate
         }
 
         if($stmt->execute()){
-            if(StringHelper::startsWith($sql, 'UPDATE')) {
+            if(Verify::stringStartsWith($sql, 'UPDATE')) {
                 return true;
             } else {
                 $msg = $stmt->fetchAll(PDO::FETCH_ASSOC);

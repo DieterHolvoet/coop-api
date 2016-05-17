@@ -30,6 +30,10 @@ class LocationDAO {
         }
     }
 
+    public static function getLocationByID($location_id) {
+        return DAOTemplate::getByID(self::TABLE_NAME, 'location_id', $location_id);
+    }
+
     public static function addTranslation($location_id, $language_id, $location_street, $location_city) {
         return DAOTemplate::insert(self::DETAILS_TABLE_NAME, array(
             'location_id'=>$location_id,

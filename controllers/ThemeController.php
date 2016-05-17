@@ -21,32 +21,14 @@ class ThemeController
     }
 
     public function add(Request $request, Response $response) {
-        // Variables
         $data = $request->getParsedBody();
-        $duration = (int) $data['theme_color'];
-        $distance = (int) $data['theme_name'];
-        $theme_id = (int) $data['theme_id'];
-        $description = filter_var($data['walk_description'], FILTER_SANITIZE_STRING);
-        $title = filter_var($data['walk_title'], FILTER_SANITIZE_STRING);
 
         // Validation
-        if(strlen($request->getBody()) == 0) {
-            throw new Exception('Error fetching request body.' . count($data));
+        if(!Verify::color($data['theme_color'])) {
+            throw new Exception('Invalid color string');
         }
 
-        if(!filter_var($duration, FILTER_VALIDATE_INT, array("options" => array("min_range"=>0, "max_range"=>1440)))) {
-            throw new Exception('Duration out of range');
-        }
-
-        if(!filter_var($distance, FILTER_VALIDATE_INT, array("options" => array("min_range"=>0, "max_range"=>7000)))) {
-            throw new Exception('Walk distance out of range');
-        }
-
-        if(!ThemeDAO::getThemeByID($theme_id)) {
-            throw new Exception("Theme with ID " . $theme_id . " and type " . gettype($theme_id) . " does not exist.");
-        }
-
-        return self::encode(WalkDAO::addWalk($duration, $distance, $theme_id, $description, $title), $response);
+        return self::encode(array('theme_id'=>ThemeDAO::addTheme($data['translations'], $data['theme_color'])), $response);
     }
 
     private function encode($data, Response $response) {
