@@ -3,8 +3,8 @@
 class Config
 {
     const DB_TYPE = 'mysql';
-    const DB_HOST = 'localhost';
-    const DB_USER = 'boris_debusscher';
-    const DB_PASS = 'bobo';
-    const DB_NAME = 'bumper';
+    const DB_HOST = 'dt5.ehb.be';
+    const DB_USER = 'INT_MAW_COOP1';
+    const DB_PASS = 'voIPAG';
+    const DB_NAME = 'INT_MAW_COOP1';
 }

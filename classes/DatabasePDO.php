@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Config.php';
+require_once WWW_ROOT . 'classes' . DIRECTORY_SEPARATOR . 'Config.php';
 
 class DatabasePDO
 {

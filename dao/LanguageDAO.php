@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * Created by PhpStorm.
+ * User: Dieter
+ * Date: 13/05/2016
+ * Time: 11:58
+ */
+class LanguageDAO {
+    const TABLE_NAME = 'languages';
+
+    public static function getAllLanguages(){
+        return DAOTemplate::getAll(self::TABLE_NAME, 'language_name');
+    }
+
+    public static function getLanguageByID($language_id){
+        return DAOTemplate::getByID("languages", "language_id", $language_id);
+    }
+
+    public static function getLanguageByCode($language_code){
+        return DAOTemplate::getByID("languages", "language_code", $language_code);
+    }
+
+    public static function getLanguageIDByCode($language_code){
+        return DAOTemplate::getByID("languages", "language_code", $language_code)[0]['language_id'];
+    }
+
+    public static function addLanguage($language_code, $language_name) {
+        return DAOTemplate::insert(self::TABLE_NAME, array('language_code'=>$language_code, 'language_name'=>$language_name));
+    }
+}
