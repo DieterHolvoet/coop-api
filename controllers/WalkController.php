@@ -13,7 +13,7 @@ use \Slim\Http\Response;
 class WalkController
 {
     public static function getAll(Request $request, Response $response) {
-        return self::encode(WalkDAO::getAll(), $response);
+        return self::encode(WalkDAO::getAll($request->getQueryParam('lang')), $response);
     }
 
     public static function getByID(Request $request, Response $response) {

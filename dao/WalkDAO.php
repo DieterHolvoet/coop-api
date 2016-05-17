@@ -7,12 +7,20 @@ class WalkDAO {
     const DETAILS_TABLE_NAME = 'walk_details';
     const MAPS_TABLE_NAME = 'walk_maps';
 
-    public static function getAll() {
-        return DAOTemplate::getAll(self::TABLE_NAME, "creation_date");
+    public static function getAll($language_code) {
+        $walks = DAOTemplate::getAll(self::TABLE_NAME, "creation_date");
+
+        for($i = 0; $i < count($walks); $i++) {
+            $walks[$i]['walk_title'] = WalkDAO::getTranslation($walks[$i]['walk_id'], LanguageDAO::getLanguageIDByCode($language_code))['walk_title'];
+            $walks[$i]['walk_description'] = WalkDAO::getTranslation($walks[$i]['walk_id'], LanguageDAO::getLanguageIDByCode($language_code))['walk_description'];
+        }
+
+        return $walks;
     }
 
     public static function getAllStops($walk_id) {
         $stops = DAOTemplate::executeSQL("SELECT * FROM " . self::MAPS_TABLE_NAME . " WHERE walk_id = " . $walk_id . " ORDER BY stop_sequence", array());
+
         for($i = 0; $i < count($stops); $i++) {
             $stop_type = $stops[$i]['stop_type'];
             $stops[$i][$stop_type.'_id'] = $stops[$i]['stop_id'];
@@ -20,6 +28,7 @@ class WalkDAO {
             unset($stops[$i]['walk_id']);
             unset($stops[$i]['walk_maps_id']);
         }
+
         return $stops;
     }
     

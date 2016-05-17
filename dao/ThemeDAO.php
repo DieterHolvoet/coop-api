@@ -29,8 +29,14 @@ class ThemeDAO {
         }
     }
 
-    public static function getAll() {
-        return DAOTemplate::getAll(self::TABLE_NAME, "theme_name");
+    public static function getAll($language_code) {
+        $themes = DAOTemplate::getAll(self::TABLE_NAME, "theme_id");
+
+        for($i = 0; $i < count($themes); $i++) {
+            $themes[$i]['theme_name'] = ThemeDAO::getTranslation($themes[$i]['theme_id'], LanguageDAO::getLanguageIDByCode($language_code))['theme_name'];
+        }
+
+        return $themes;
     }
 
     public static function addTheme($languages, $theme_color){
@@ -56,7 +62,7 @@ class ThemeDAO {
     }
 
     public static function getTranslation($theme_id, $language_id) {
-        return DAOTemplate::getTranslation(self::DETAILS_TABLE_NAME, "theme_id", $theme_id, $language_id);
+        return DAOTemplate::getTranslation(self::DETAILS_TABLE_NAME, "theme_id", $language_id, $theme_id);
     }
 
     public static function getAllTranslations($theme_id) {

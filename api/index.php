@@ -27,22 +27,12 @@ $configuration = [
 $c = new \Slim\Container($configuration);
 $app = new \Slim\App($c);
 
-// Override the default Not Found Handler
-$c['notFoundHandler'] = function ($c) {
-	return function (Request $request, Response $response) use ($c) {
-		return $c['response']
-			->withStatus(404)
-			->withHeader('Content-Type', 'text/html')
-			->write('Page not found<br>URI: ' . $request->getUri() . '<br>Request target: ' . $request->getRequestTarget());
-	};
-};
-
 /*
  * ROUTES
  */
 
 $app->get('/', function ($request, $response, $args) {
-	return $response->withStatus(200)->write('<h1>Welcome to the COOP API! Please refer to the documentation for more information on all endpoints.');
+	return $response->withStatus(200)->write('<h1>Welcome to the COOP API!</h1><h2>Please refer to the documentation for more information on all endpoints.</h2>');
 });
 
 // Walks

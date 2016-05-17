@@ -12,6 +12,6 @@ require_once WWW_ROOT . "api" . DIRECTORY_SEPARATOR . "vendor" . DIRECTORY_SEPAR
 include WWW_ROOT . 'classes' . DIRECTORY_SEPARATOR . "Autoload.php";
 
 // Test
-foreach(WalkDAO::getAllStops(1) as $stop) {
-    echo $stop['stop_sequence'] . '<br>';
+foreach(ThemeDAO::getAll('nl') as $item) {
+    echo $item['stop_sequence'] . '<br>';
 }

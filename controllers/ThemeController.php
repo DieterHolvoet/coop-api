@@ -13,7 +13,7 @@ use \Slim\Http\Response;
 class ThemeController
 {
     public function getAll(Request $request, Response $response) {
-        return self::encode(ThemeDAO::getAll(), $response);
+        return self::encode(ThemeDAO::getAll($request->getQueryParam('lang')), $response);
     }
 
     public function getByID(Request $request, Response $response) {
