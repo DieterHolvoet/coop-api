@@ -13,6 +13,7 @@ spl_autoload_register(function ($class_name) {
     // Class directories
     $directories = array(
         WWW_ROOT . 'classes',
+        WWW_ROOT . 'classes' . DIRECTORY_SEPARATOR . 'enumerations',
         WWW_ROOT . 'dao',
         WWW_ROOT . 'controllers'
     );

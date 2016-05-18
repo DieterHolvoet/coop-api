@@ -30,8 +30,14 @@ class LocationDAO {
         }
     }
 
-    public static function getLocationByID($location_id) {
-        return DAOTemplate::getByID(self::TABLE_NAME, 'location_id', $location_id);
+    public static function getLocationByID($location_id, $language_id) {
+        $location = DAOTemplate::getByID(self::TABLE_NAME, 'location_id', $location_id)[0];
+        $translation = LocationDAO::getTranslation($location_id, $language_id);
+
+        unset($translation['location_detail_id']);
+        unset($translation['language_id']);
+
+        return array_merge($location, $translation);
     }
 
     public static function addTranslation($location_id, $language_id, $location_street, $location_city) {
@@ -41,5 +47,9 @@ class LocationDAO {
             'location_street'=>$location_street,
             'location_city'=>$location_city
         ));
+    }
+
+    public static function getTranslation($location_id, $language_id) {
+        return DAOTemplate::getTranslation(self::DETAILS_TABLE_NAME, 'location_id', $language_id, $location_id);
     }
 }
