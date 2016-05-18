@@ -17,7 +17,7 @@ class WalkController
     }
 
     public static function getByID(Request $request, Response $response) {
-        return self::encode(WalkDAO::getWalkByID($request->getAttribute('id'), LanguageDAO::getLanguageIDByCode($request->getQueryParam('lang'))), $response);
+        return self::encode(WalkDAO::getWalkByID($request->getAttribute('id'), LanguageDAO::getLanguageIDByCode($request->getQueryParam('lang')), $request->getQueryParam('grouped')), $response);
     }
 
     public static function add(Request $request, Response $response) {

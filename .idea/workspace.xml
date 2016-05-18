@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5d9dfa8-bf4b-4f9a-8d99-cf0dd4dc4610" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/enumerations/StopTypes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/test.php" afterPath="$PROJECT_DIR$/api/test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Autoload.php" afterPath="$PROJECT_DIR$/classes/Autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/LocationDAO.php" afterPath="$PROJECT_DIR$/dao/LocationDAO.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/WalkController.php" afterPath="$PROJECT_DIR$/controllers/WalkController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/WalkDAO.php" afterPath="$PROJECT_DIR$/dao/WalkDAO.php" />
     </list>
     <ignored path="integration_mobileappweb_groep1_api.iws" />
@@ -51,8 +48,8 @@
       <file leaf-file-name="WalkController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/WalkController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-57">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="19" column="146" selection-start-line="19" selection-start-column="146" selection-end-line="19" selection-end-column="146" />
               <folding>
                 <element signature="e#7#30#0#PHP" expanded="true" />
               </folding>
@@ -63,15 +60,27 @@
       <file leaf-file-name="WalkDAO.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dao/WalkDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="97" column="48" selection-start-line="97" selection-start-column="48" selection-end-line="97" selection-end-column="48" />
+            <state relative-caret-position="493">
+              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding>
                 <element signature="n#addTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
+                <element signature="n#getAllPois#0;n#WalkDAO#0;n#!!top" expanded="false" />
+                <element signature="n#getAllWaypoints#0;n#WalkDAO#0;n#!!top" expanded="false" />
+                <element signature="n#getAllStops#0;n#WalkDAO#0;n#!!top" expanded="false" />
                 <element signature="n#getAllTranslations#0;n#WalkDAO#0;n#!!top" expanded="false" />
                 <element signature="n#getAverageLocation#0;n#WalkDAO#0;n#!!top" expanded="false" />
                 <element signature="n#getWalkStopsCount#0;n#WalkDAO#0;n#!!top" expanded="false" />
-                <marker date="1463566100628" expanded="true" signature="5345:5444" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-                <marker date="1463566100628" expanded="true" signature="8048:8134" placeholder="SELECT MAX(s... " />
+                <element signature="n#getTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
+                <element signature="n#stopToPoi#0;n#WalkDAO#0;n#!!top" expanded="false" />
+                <element signature="n#stopToWaypoint#0;n#WalkDAO#0;n#!!top" expanded="false" />
+                <marker date="1463578227715" expanded="true" signature="5101:5114" placeholder="SELECT * FRO... " />
+                <marker date="1463578227715" expanded="true" signature="5101:5115" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
+                <marker date="1463578227715" expanded="true" signature="5101:5217" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+                <marker date="1463578227715" expanded="true" signature="5563:5576" placeholder="SELECT * FRO... " />
+                <marker date="1463578227715" expanded="true" signature="5563:5577" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+                <marker date="1463578227715" expanded="true" signature="5563:5679" placeholder="SELECT * FRO... WHERE" />
+                <marker date="1463578227715" expanded="true" signature="6031:6130" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+                <marker date="1463578227715" expanded="true" signature="7584:7670" placeholder="SELECT MAX(s... " />
               </folding>
             </state>
           </provider>
@@ -147,12 +156,12 @@
         <option value="$PROJECT_DIR$/controllers/LanguageController.php" />
         <option value="$PROJECT_DIR$/dao/PoiDAO.php" />
         <option value="$PROJECT_DIR$/dao/WaypointDAO.php" />
-        <option value="$PROJECT_DIR$/controllers/WalkController.php" />
         <option value="$PROJECT_DIR$/dao/ThemeDAO.php" />
         <option value="$PROJECT_DIR$/classes/Enumerations.php" />
         <option value="$PROJECT_DIR$/classes/enumerations/StopTypes.php" />
         <option value="$PROJECT_DIR$/classes/Autoload.php" />
         <option value="$PROJECT_DIR$/dao/LocationDAO.php" />
+        <option value="$PROJECT_DIR$/controllers/WalkController.php" />
         <option value="$PROJECT_DIR$/api/test.php" />
         <option value="$PROJECT_DIR$/dao/WalkDAO.php" />
       </list>
@@ -357,12 +366,12 @@
       <workItem from="1463053736957" duration="30785000" />
       <workItem from="1463213584171" duration="4171000" />
       <workItem from="1463301201285" duration="47987000" />
-      <workItem from="1463496170104" duration="6137000" />
+      <workItem from="1463496170104" duration="9553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89080000" />
+    <option name="totallyTimeSpent" value="92496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -411,11 +420,23 @@
           <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
           <folding>
             <element signature="n#addTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getAllPois#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getAllWaypoints#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getAllStops#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#getAllTranslations#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#getAverageLocation#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#getWalkStopsCount#0;n#WalkDAO#0;n#!!top" expanded="false" />
-            <marker date="1463566100628" expanded="true" signature="5345:5444" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463566100628" expanded="true" signature="8048:8134" placeholder="SELECT MAX(s... " />
+            <element signature="n#getTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#stopToPoi#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#stopToWaypoint#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <marker date="1463578227715" expanded="true" signature="5101:5114" placeholder="SELECT * FRO... " />
+            <marker date="1463578227715" expanded="true" signature="5101:5115" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="5101:5217" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="5563:5576" placeholder="SELECT * FRO... " />
+            <marker date="1463578227715" expanded="true" signature="5563:5577" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="5563:5679" placeholder="SELECT * FRO... WHERE" />
+            <marker date="1463578227715" expanded="true" signature="6031:6130" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="7584:7670" placeholder="SELECT MAX(s... " />
           </folding>
         </state>
       </provider>
@@ -486,11 +507,23 @@
           <caret line="74" column="32" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
           <folding>
             <element signature="n#addTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getAllPois#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getAllWaypoints#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getAllStops#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#getAllTranslations#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#getAverageLocation#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#getWalkStopsCount#0;n#WalkDAO#0;n#!!top" expanded="false" />
-            <marker date="1463566100628" expanded="true" signature="5345:5444" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463566100628" expanded="true" signature="8048:8134" placeholder="SELECT MAX(s... " />
+            <element signature="n#getTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#stopToPoi#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#stopToWaypoint#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <marker date="1463578227715" expanded="true" signature="5101:5114" placeholder="SELECT * FRO... " />
+            <marker date="1463578227715" expanded="true" signature="5101:5115" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="5101:5217" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="5563:5576" placeholder="SELECT * FRO... " />
+            <marker date="1463578227715" expanded="true" signature="5563:5577" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="5563:5679" placeholder="SELECT * FRO... WHERE" />
+            <marker date="1463578227715" expanded="true" signature="6031:6130" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="7584:7670" placeholder="SELECT MAX(s... " />
           </folding>
         </state>
       </provider>
@@ -587,11 +620,23 @@
           <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
           <folding>
             <element signature="n#addTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getAllPois#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getAllWaypoints#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getAllStops#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#getAllTranslations#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#getAverageLocation#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#getWalkStopsCount#0;n#WalkDAO#0;n#!!top" expanded="false" />
-            <marker date="1463566100628" expanded="true" signature="5345:5444" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463566100628" expanded="true" signature="8048:8134" placeholder="SELECT MAX(s... " />
+            <element signature="n#getTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#stopToPoi#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#stopToWaypoint#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <marker date="1463578227715" expanded="true" signature="5101:5114" placeholder="SELECT * FRO... " />
+            <marker date="1463578227715" expanded="true" signature="5101:5115" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="5101:5217" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="5563:5576" placeholder="SELECT * FRO... " />
+            <marker date="1463578227715" expanded="true" signature="5563:5577" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="5563:5679" placeholder="SELECT * FRO... WHERE" />
+            <marker date="1463578227715" expanded="true" signature="6031:6130" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="7584:7670" placeholder="SELECT MAX(s... " />
           </folding>
         </state>
       </provider>
@@ -825,16 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/WalkController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#30#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/PoiDAO.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -885,6 +920,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/WalkController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="146" selection-start-line="19" selection-start-column="146" selection-end-line="19" selection-end-column="146" />
+          <folding>
+            <element signature="e#7#30#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -897,15 +942,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dao/WalkDAO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="97" column="48" selection-start-line="97" selection-start-column="48" selection-end-line="97" selection-end-column="48" />
+        <state relative-caret-position="493">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding>
             <element signature="n#addTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getAllPois#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getAllWaypoints#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#getAllStops#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#getAllTranslations#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#getAverageLocation#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#getWalkStopsCount#0;n#WalkDAO#0;n#!!top" expanded="false" />
-            <marker date="1463566100628" expanded="true" signature="5345:5444" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463566100628" expanded="true" signature="8048:8134" placeholder="SELECT MAX(s... " />
+            <element signature="n#getTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#stopToPoi#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <element signature="n#stopToWaypoint#0;n#WalkDAO#0;n#!!top" expanded="false" />
+            <marker date="1463578227715" expanded="true" signature="5101:5114" placeholder="SELECT * FRO... " />
+            <marker date="1463578227715" expanded="true" signature="5101:5115" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="5101:5217" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="5563:5576" placeholder="SELECT * FRO... " />
+            <marker date="1463578227715" expanded="true" signature="5563:5577" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="5563:5679" placeholder="SELECT * FRO... WHERE" />
+            <marker date="1463578227715" expanded="true" signature="6031:6130" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463578227715" expanded="true" signature="7584:7670" placeholder="SELECT MAX(s... " />
           </folding>
         </state>
       </provider>
