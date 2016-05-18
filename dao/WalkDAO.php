@@ -20,7 +20,7 @@ class WalkDAO {
             throw new Exception('Walk distance out of range');
         }
 
-        if(!ThemeDAO::getThemeByID($theme_id)) {
+        if(!ThemeDAO::getThemeByID($theme_id, 1)) {
             throw new Exception("Theme with ID " . $theme_id . " and type " . gettype($theme_id) . " does not exist.");
         }
 
@@ -205,6 +205,7 @@ class WalkDAO {
 
         $stop['poi_id'] = $poi_id;
         $stop['location'] = LocationDAO::getLocationByID($location_id, $language_id);
+        $stop['media'] = PoiDAO::getMedia($poi_id, $language_id);
 
         unset($translation['poi_detail_id']);
         unset($translation['language_id']);
@@ -223,6 +224,7 @@ class WalkDAO {
 
         $stop['waypoint_id'] = $waypoint_id;
         $stop['location'] = LocationDAO::getLocationByID($location_id, $language_id);
+        $stop['media'] = WaypointDAO::getMedia($waypoint_id, $language_id);
 
         unset($translation['waypoint_detail_id']);
         unset($translation['language_id']);

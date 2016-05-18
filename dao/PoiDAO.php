@@ -62,6 +62,10 @@ class PoiDAO {
         return $media_id;
     }
 
+    public static function getMedia($poi_id, $language_id) {
+        return MediaDAO::getMedia(StopTypes::POI, $poi_id, $language_id);
+    }
+
     // Source: http://stackoverflow.com/a/4571347
     public static function generateUnlockCode() {
         $unlock_code = substr(md5(uniqid(mt_rand(), true)) , 0, 8);

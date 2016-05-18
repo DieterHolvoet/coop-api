@@ -62,6 +62,10 @@ class WaypointDAO {
         return $media_id;
     }
 
+    public static function getMedia($waypoint_id, $language_id) {
+        return MediaDAO::getMedia(StopTypes::WAYPOINT, $waypoint_id, $language_id);
+    }
+
     public static function getMediaTypeID() {
         return MediaDAO::getMediaTypeIDByName('Photo');
     }

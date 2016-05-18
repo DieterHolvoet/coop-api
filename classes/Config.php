@@ -7,4 +7,5 @@ class Config
     const DB_USER = 'INT_MAW_COOP1';
     const DB_PASS = 'voIPAG';
     const DB_NAME = 'INT_MAW_COOP1';
+    const MEDIA_URL = 'http://iwtsl.ehb.be/~dieter.holvoet/IMAW/media';
 }
