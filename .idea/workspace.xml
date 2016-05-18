@@ -2,45 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5d9dfa8-bf4b-4f9a-8d99-cf0dd4dc4610" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/insertValues.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/Autoload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/DAOTemplate.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/Debug.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/StringHelper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/UnlockCode.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/ThemeController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/WalkController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dao/LanguageDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dao/LocationDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dao/MediaDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dao/PoiDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dao/ThemeDAO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dao/WaypointDAO.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Environment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Exception/Pass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Exception/Stop.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Helper/Set.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Http/Cookies.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Http/Headers.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Http/Request.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Http/Response.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Http/Util.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Log.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/LogWriter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Middleware.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Middleware/ContentTypes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Middleware/Flash.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Middleware/MethodOverride.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Middleware/PrettyExceptions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Middleware/SessionCookie.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Route.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Router.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Slim.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/View.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dao/VoorbeeldDAO.php" afterPath="$PROJECT_DIR$/dao/WalkDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/index.php" afterPath="$PROJECT_DIR$/api/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Config.php" afterPath="$PROJECT_DIR$/classes/Config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/DatabasePDO.php" afterPath="$PROJECT_DIR$/classes/DatabasePDO.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/test.php" afterPath="$PROJECT_DIR$/api/test.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/WalkController.php" afterPath="$PROJECT_DIR$/controllers/WalkController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/PoiDAO.php" afterPath="$PROJECT_DIR$/dao/PoiDAO.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/ThemeDAO.php" afterPath="$PROJECT_DIR$/dao/ThemeDAO.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/WalkDAO.php" afterPath="$PROJECT_DIR$/dao/WalkDAO.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/WaypointDAO.php" afterPath="$PROJECT_DIR$/dao/WaypointDAO.php" />
     </list>
     <ignored path="integration_mobileappweb_groep1_api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,13 +37,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/index.php">
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+            <state relative-caret-position="238">
+              <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
               <folding>
-                <element signature="e#95#118#0#PHP" expanded="true" />
+                <element signature="e#6#88#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WalkController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controllers/WalkController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+              <folding>
+                <element signature="e#7#30#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,13 +64,37 @@
       <file leaf-file-name="WalkDAO.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dao/WalkDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
-              <caret line="81" column="84" selection-start-line="81" selection-start-column="84" selection-end-line="81" selection-end-column="84" />
+            <state relative-caret-position="1360">
+              <caret line="80" column="69" selection-start-line="80" selection-start-column="69" selection-end-line="80" selection-end-column="69" />
               <folding>
-                <marker date="1463343852482" expanded="true" signature="4350:4444" placeholder="UPDATE items... " />
-                <marker date="1463343852482" expanded="true" signature="4813:4899" placeholder="SELECT MAX(s... " />
-                <marker date="1463343852482" expanded="true" signature="4813:4911" placeholder="SELECT MAX(s... " />
+                <marker date="1463563574520" expanded="true" signature="1029:1088" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+                <marker date="1463563574520" expanded="true" signature="1029:1128" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+                <marker date="1463563574520" expanded="true" signature="7400:7494" placeholder="UPDATE items... " />
+                <marker date="1463563574520" expanded="true" signature="7863:7949" placeholder="SELECT MAX(s... " />
+                <marker date="1463563574520" expanded="true" signature="7863:7961" placeholder="SELECT MAX(s... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PoiDAO.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao/PoiDAO.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+              <folding>
+                <element signature="e#7#89#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WaypointDAO.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao/WaypointDAO.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="43" column="71" selection-start-line="43" selection-start-column="71" selection-end-line="43" selection-end-column="71" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,86 +102,8 @@
       <file leaf-file-name="ThemeDAO.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dao/ThemeDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DAOTemplate.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/DAOTemplate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="121" column="58" selection-start-line="121" selection-start-column="58" selection-end-line="121" selection-end-column="58" />
-              <folding>
-                <marker date="1463474773511" expanded="true" signature="191:204" placeholder="SELECT * FRO... " />
-                <marker date="1463474773511" expanded="true" signature="191:205" placeholder="SELECT * FRO... ${walks}" />
-                <marker date="1463474773511" expanded="true" signature="191:230" placeholder="SELECT * FRO... ${$table_name}" />
-                <marker date="1463474773511" expanded="true" signature="191:231" placeholder="SELECT * FRO... ${$table_name}" />
-                <marker date="1463474773511" expanded="true" signature="191:253" placeholder="SELECT * FRO... walks" />
-                <marker date="1463474773511" expanded="true" signature="635:671" placeholder="SELECT MAX(I... " />
-                <marker date="1463474773511" expanded="true" signature="635:672" placeholder="SELECT MAX(I... Customers" />
-                <marker date="1463474773511" expanded="true" signature="1023:1036" placeholder="SELECT * FRO... " />
-                <marker date="1463474773511" expanded="true" signature="1023:1037" placeholder="SELECT * FRO... ${$table_name}" />
-                <marker date="1463474773511" expanded="true" signature="1023:1065" placeholder="SELECT * FRO... ${$table_name}" />
-                <marker date="1463474773511" expanded="true" signature="1023:1066" placeholder="SELECT * FRO... ${$table_name}" />
-                <marker date="1463474773511" expanded="true" signature="1023:1087" placeholder="SELECT * FRO... walks" />
-                <marker date="1463474773511" expanded="true" signature="1466:1478" placeholder="INSERT INTO ${$table_name}... " />
-                <marker date="1463474773511" expanded="true" signature="1466:1493" placeholder="INSERT INTO walk_details... " />
-                <marker date="1463474773511" expanded="true" signature="2241:2255" placeholder="SELECT * FRO... ${$table_name}" />
-                <marker date="1463474773511" expanded="true" signature="2241:2280" placeholder="SELECT * FRO... ${$table_name}" />
-                <marker date="1463474773511" expanded="true" signature="2241:2282" placeholder="SELECT * FRO... ${$table_name}" />
-                <marker date="1463474773511" expanded="true" signature="2254:2255" placeholder="INSERT INTO ${$table_name}... " />
-                <marker date="1463474773511" expanded="true" signature="2899:2912" placeholder="SELECT * FRO... " />
-                <marker date="1463474773511" expanded="true" signature="2899:2938" placeholder="SELECT * FRO... ${$table_name}" />
-                <marker date="1463474773511" expanded="true" signature="2899:2939" placeholder="SELECT * FRO... ${$table_name}" />
-                <marker date="1463474773511" expanded="true" signature="2899:2959" placeholder="SELECT * FRO... ${$table_name}" />
-                <marker date="1463474773511" expanded="true" signature="2899:2992" placeholder="SELECT * FRO... walk_details" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StringHelper.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/StringHelper.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ThemeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/ThemeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="24" />
-              <folding>
-                <element signature="e#7#30#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WalkController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/WalkController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-              <folding>
-                <element signature="e#7#30#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+            <state relative-caret-position="272">
+              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -194,26 +120,29 @@
         <option value="$PROJECT_DIR$/classes/Config.php" />
         <option value="$PROJECT_DIR$/classes/DatabasePDO.php" />
         <option value="$PROJECT_DIR$/classes/UnlockCode.php" />
-        <option value="$PROJECT_DIR$/dao/LocationDAO.php" />
-        <option value="$PROJECT_DIR$/dao/WaypointDAO.php" />
         <option value="$PROJECT_DIR$/classes/Debug.php" />
-        <option value="$PROJECT_DIR$/dao/LanguageDAO.php" />
         <option value="$PROJECT_DIR$/dao/MediaDAO.php" />
         <option value="$PROJECT_DIR$/api/unlockCode.php" />
-        <option value="$PROJECT_DIR$/dao/PoiDAO.php" />
-        <option value="$PROJECT_DIR$/api/insertValues.php" />
         <option value="$PROJECT_DIR$/classes/Autoload.php" />
         <option value="$PROJECT_DIR$/routes/WalkRoutes.php" />
-        <option value="$PROJECT_DIR$/controllers/ThemeController.php" />
-        <option value="$PROJECT_DIR$/dao/WalkDAO.php" />
-        <option value="$PROJECT_DIR$/controllers/WalkController.php" />
-        <option value="$PROJECT_DIR$/api/test.php" />
-        <option value="$PROJECT_DIR$/api/index.php" />
-        <option value="$PROJECT_DIR$/dao/ThemeDAO.php" />
         <option value="$PROJECT_DIR$/classes/String.php" />
-        <option value="$PROJECT_DIR$/classes/StringHelper.php" />
-        <option value="$PROJECT_DIR$/classes/DAOTemplate.php" />
         <option value="$PROJECT_DIR$/api/.htaccess" />
+        <option value="$PROJECT_DIR$/api/insertValues.php" />
+        <option value="$PROJECT_DIR$/classes/StringHelper.php" />
+        <option value="$PROJECT_DIR$/controllers/ThemeController.php" />
+        <option value="$PROJECT_DIR$/classes/LocationHelper.php" />
+        <option value="$PROJECT_DIR$/classes/DAOTemplate.php" />
+        <option value="$PROJECT_DIR$/dao/LocationDAO.php" />
+        <option value="$PROJECT_DIR$/classes/Verify.php" />
+        <option value="$PROJECT_DIR$/dao/LanguageDAO.php" />
+        <option value="$PROJECT_DIR$/api/index.php" />
+        <option value="$PROJECT_DIR$/controllers/LanguageController.php" />
+        <option value="$PROJECT_DIR$/dao/PoiDAO.php" />
+        <option value="$PROJECT_DIR$/dao/WaypointDAO.php" />
+        <option value="$PROJECT_DIR$/controllers/WalkController.php" />
+        <option value="$PROJECT_DIR$/dao/WalkDAO.php" />
+        <option value="$PROJECT_DIR$/api/test.php" />
+        <option value="$PROJECT_DIR$/dao/ThemeDAO.php" />
       </list>
     </option>
   </component>
@@ -257,12 +186,26 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+      </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="integration_mobileappweb_groep1_api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="integration_mobileappweb_groep1_api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="integration_mobileappweb_groep1_api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -323,8 +266,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -385,22 +326,22 @@
       <updated>1463053735511</updated>
       <workItem from="1463053736957" duration="30785000" />
       <workItem from="1463213584171" duration="4171000" />
-      <workItem from="1463301201285" duration="35346000" />
+      <workItem from="1463301201285" duration="47987000" />
+      <workItem from="1463496170104" duration="3851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70302000" />
+    <option name="totallyTimeSpent" value="86794000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15260416" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13802083" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -411,6 +352,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
@@ -427,16 +369,84 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/controllers/LanguageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+          <folding>
+            <element signature="e#7#30#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Verify.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/WalkDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
+          <folding>
+            <marker date="1463563574520" expanded="true" signature="1029:1088" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463563574520" expanded="true" signature="1029:1128" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463563574520" expanded="true" signature="7400:7494" placeholder="UPDATE items... " />
+            <marker date="1463563574520" expanded="true" signature="7863:7949" placeholder="SELECT MAX(s... " />
+            <marker date="1463563574520" expanded="true" signature="7863:7961" placeholder="SELECT MAX(s... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/ThemeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="31" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/LanguageDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/WalkController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+          <folding>
+            <element signature="e#7#30#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/ThemeDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="38" />
           <folding>
-            <element signature="e#95#118#0#PHP" expanded="true" />
+            <element signature="e#95#118#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -445,9 +455,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
-          <folding>
-            <element signature="e#6#88#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -455,9 +463,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#89#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -466,9 +472,11 @@
         <state relative-caret-position="1258">
           <caret line="74" column="32" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
           <folding>
-            <marker date="1463343852482" expanded="true" signature="4350:4444" placeholder="UPDATE items... " />
-            <marker date="1463343852482" expanded="true" signature="4813:4899" placeholder="SELECT MAX(s... " />
-            <marker date="1463343852482" expanded="true" signature="4813:4911" placeholder="SELECT MAX(s... " />
+            <marker date="1463563574520" expanded="true" signature="1029:1088" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463563574520" expanded="true" signature="1029:1128" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463563574520" expanded="true" signature="7400:7494" placeholder="UPDATE items... " />
+            <marker date="1463563574520" expanded="true" signature="7863:7949" placeholder="SELECT MAX(s... " />
+            <marker date="1463563574520" expanded="true" signature="7863:7961" placeholder="SELECT MAX(s... " />
           </folding>
         </state>
       </provider>
@@ -477,7 +485,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="10" selection-end-column="47" />
-          <folding />
+          <folding>
+            <element signature="e#7#89#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -494,29 +504,29 @@
         <state relative-caret-position="1377">
           <caret line="81" column="13" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
           <folding>
-            <marker date="1463474773511" expanded="true" signature="191:204" placeholder="SELECT * FRO... " />
-            <marker date="1463474773511" expanded="true" signature="191:205" placeholder="SELECT * FRO... ${walks}" />
-            <marker date="1463474773511" expanded="true" signature="191:230" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="191:231" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="191:253" placeholder="SELECT * FRO... walks" />
-            <marker date="1463474773511" expanded="true" signature="635:671" placeholder="SELECT MAX(I... " />
-            <marker date="1463474773511" expanded="true" signature="635:672" placeholder="SELECT MAX(I... Customers" />
-            <marker date="1463474773511" expanded="true" signature="1023:1036" placeholder="SELECT * FRO... " />
-            <marker date="1463474773511" expanded="true" signature="1023:1037" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="1023:1065" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="1023:1066" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="1023:1087" placeholder="SELECT * FRO... walks" />
-            <marker date="1463474773511" expanded="true" signature="1466:1478" placeholder="INSERT INTO ${$table_name}... " />
-            <marker date="1463474773511" expanded="true" signature="1466:1493" placeholder="INSERT INTO walk_details... " />
-            <marker date="1463474773511" expanded="true" signature="2241:2255" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2241:2280" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2241:2282" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2254:2255" placeholder="INSERT INTO ${$table_name}... " />
-            <marker date="1463474773511" expanded="true" signature="2899:2912" placeholder="SELECT * FRO... " />
-            <marker date="1463474773511" expanded="true" signature="2899:2938" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2899:2939" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2899:2959" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2899:2992" placeholder="SELECT * FRO... walk_details" />
+            <marker date="1463486356262" expanded="true" signature="191:204" placeholder="SELECT * FRO... " />
+            <marker date="1463486356262" expanded="true" signature="191:205" placeholder="SELECT * FRO... ${walks}" />
+            <marker date="1463486356262" expanded="true" signature="191:230" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="191:231" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="191:253" placeholder="SELECT * FRO... walks" />
+            <marker date="1463486356262" expanded="true" signature="635:671" placeholder="SELECT MAX(I... " />
+            <marker date="1463486356262" expanded="true" signature="635:672" placeholder="SELECT MAX(I... Customers" />
+            <marker date="1463486356262" expanded="true" signature="1023:1036" placeholder="SELECT * FRO... " />
+            <marker date="1463486356262" expanded="true" signature="1023:1037" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="1023:1065" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="1023:1066" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="1023:1087" placeholder="SELECT * FRO... walks" />
+            <marker date="1463486356262" expanded="true" signature="1466:1478" placeholder="INSERT INTO ${$table_name}... " />
+            <marker date="1463486356262" expanded="true" signature="1466:1493" placeholder="INSERT INTO walk_details... " />
+            <marker date="1463486356262" expanded="true" signature="2241:2255" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2241:2280" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2241:2282" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2254:2255" placeholder="INSERT INTO ${$table_name}... " />
+            <marker date="1463486356262" expanded="true" signature="2899:2912" placeholder="SELECT * FRO... " />
+            <marker date="1463486356262" expanded="true" signature="2899:2938" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2899:2939" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2899:2959" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2899:2992" placeholder="SELECT * FRO... walk_details" />
           </folding>
         </state>
       </provider>
@@ -536,7 +546,7 @@
         <state relative-caret-position="731">
           <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="38" />
           <folding>
-            <element signature="e#95#118#0#PHP" expanded="true" />
+            <element signature="e#95#118#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -545,9 +555,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="e#6#88#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -555,9 +563,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#89#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -566,9 +572,11 @@
         <state relative-caret-position="1139">
           <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
           <folding>
-            <marker date="1463343852482" expanded="true" signature="4350:4444" placeholder="UPDATE items... " />
-            <marker date="1463343852482" expanded="true" signature="4813:4899" placeholder="SELECT MAX(s... " />
-            <marker date="1463343852482" expanded="true" signature="4813:4911" placeholder="SELECT MAX(s... " />
+            <marker date="1463563574520" expanded="true" signature="1029:1088" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463563574520" expanded="true" signature="1029:1128" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463563574520" expanded="true" signature="7400:7494" placeholder="UPDATE items... " />
+            <marker date="1463563574520" expanded="true" signature="7863:7949" placeholder="SELECT MAX(s... " />
+            <marker date="1463563574520" expanded="true" signature="7863:7961" placeholder="SELECT MAX(s... " />
           </folding>
         </state>
       </provider>
@@ -596,29 +604,29 @@
         <state relative-caret-position="510">
           <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
           <folding>
-            <marker date="1463474773511" expanded="true" signature="191:204" placeholder="SELECT * FRO... " />
-            <marker date="1463474773511" expanded="true" signature="191:205" placeholder="SELECT * FRO... ${walks}" />
-            <marker date="1463474773511" expanded="true" signature="191:230" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="191:231" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="191:253" placeholder="SELECT * FRO... walks" />
-            <marker date="1463474773511" expanded="true" signature="635:671" placeholder="SELECT MAX(I... " />
-            <marker date="1463474773511" expanded="true" signature="635:672" placeholder="SELECT MAX(I... Customers" />
-            <marker date="1463474773511" expanded="true" signature="1023:1036" placeholder="SELECT * FRO... " />
-            <marker date="1463474773511" expanded="true" signature="1023:1037" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="1023:1065" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="1023:1066" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="1023:1087" placeholder="SELECT * FRO... walks" />
-            <marker date="1463474773511" expanded="true" signature="1466:1478" placeholder="INSERT INTO ${$table_name}... " />
-            <marker date="1463474773511" expanded="true" signature="1466:1493" placeholder="INSERT INTO walk_details... " />
-            <marker date="1463474773511" expanded="true" signature="2241:2255" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2241:2280" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2241:2282" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2254:2255" placeholder="INSERT INTO ${$table_name}... " />
-            <marker date="1463474773511" expanded="true" signature="2899:2912" placeholder="SELECT * FRO... " />
-            <marker date="1463474773511" expanded="true" signature="2899:2938" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2899:2939" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2899:2959" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2899:2992" placeholder="SELECT * FRO... walk_details" />
+            <marker date="1463486356262" expanded="true" signature="191:204" placeholder="SELECT * FRO... " />
+            <marker date="1463486356262" expanded="true" signature="191:205" placeholder="SELECT * FRO... ${walks}" />
+            <marker date="1463486356262" expanded="true" signature="191:230" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="191:231" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="191:253" placeholder="SELECT * FRO... walks" />
+            <marker date="1463486356262" expanded="true" signature="635:671" placeholder="SELECT MAX(I... " />
+            <marker date="1463486356262" expanded="true" signature="635:672" placeholder="SELECT MAX(I... Customers" />
+            <marker date="1463486356262" expanded="true" signature="1023:1036" placeholder="SELECT * FRO... " />
+            <marker date="1463486356262" expanded="true" signature="1023:1037" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="1023:1065" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="1023:1066" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="1023:1087" placeholder="SELECT * FRO... walks" />
+            <marker date="1463486356262" expanded="true" signature="1466:1478" placeholder="INSERT INTO ${$table_name}... " />
+            <marker date="1463486356262" expanded="true" signature="1466:1493" placeholder="INSERT INTO walk_details... " />
+            <marker date="1463486356262" expanded="true" signature="2241:2255" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2241:2280" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2241:2282" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2254:2255" placeholder="INSERT INTO ${$table_name}... " />
+            <marker date="1463486356262" expanded="true" signature="2899:2912" placeholder="SELECT * FRO... " />
+            <marker date="1463486356262" expanded="true" signature="2899:2938" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2899:2939" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2899:2959" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2899:2992" placeholder="SELECT * FRO... walk_details" />
           </folding>
         </state>
       </provider>
@@ -635,7 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -643,9 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-          <folding>
-            <element signature="e#7#89#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -653,7 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,45 +670,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/WaypointDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="10" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/unlockCode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/LanguageDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/PoiDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="40" column="60" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
-          <folding>
-            <element signature="e#7#89#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/api/unlockCode.php" />
     <entry file="file://$PROJECT_DIR$/api/vendor/composer/autoload_real.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -713,7 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -721,152 +689,188 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/LocationDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/VoorbeeldDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/ThemeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="24" />
-          <folding>
-            <element signature="e#7#30#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/WalkController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding>
-            <element signature="e#7#30#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/Controller.php" />
+    <entry file="file://$PROJECT_DIR$/dao/VoorbeeldDAO.php" />
     <entry file="file://$PROJECT_DIR$/classes/Config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/insertValues.php">
+    <entry file="file://$PROJECT_DIR$/api/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="102">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/StringHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        <state relative-caret-position="187">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/LocationDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/DAOTemplate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="121" column="58" selection-start-line="121" selection-start-column="58" selection-end-line="121" selection-end-column="58" />
+        <state relative-caret-position="170">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
           <folding>
-            <marker date="1463474773511" expanded="true" signature="191:204" placeholder="SELECT * FRO... " />
-            <marker date="1463474773511" expanded="true" signature="191:205" placeholder="SELECT * FRO... ${walks}" />
-            <marker date="1463474773511" expanded="true" signature="191:230" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="191:231" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="191:253" placeholder="SELECT * FRO... walks" />
-            <marker date="1463474773511" expanded="true" signature="635:671" placeholder="SELECT MAX(I... " />
-            <marker date="1463474773511" expanded="true" signature="635:672" placeholder="SELECT MAX(I... Customers" />
-            <marker date="1463474773511" expanded="true" signature="1023:1036" placeholder="SELECT * FRO... " />
-            <marker date="1463474773511" expanded="true" signature="1023:1037" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="1023:1065" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="1023:1066" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="1023:1087" placeholder="SELECT * FRO... walks" />
-            <marker date="1463474773511" expanded="true" signature="1466:1478" placeholder="INSERT INTO ${$table_name}... " />
-            <marker date="1463474773511" expanded="true" signature="1466:1493" placeholder="INSERT INTO walk_details... " />
-            <marker date="1463474773511" expanded="true" signature="2241:2255" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2241:2280" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2241:2282" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2254:2255" placeholder="INSERT INTO ${$table_name}... " />
-            <marker date="1463474773511" expanded="true" signature="2899:2912" placeholder="SELECT * FRO... " />
-            <marker date="1463474773511" expanded="true" signature="2899:2938" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2899:2939" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2899:2959" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1463474773511" expanded="true" signature="2899:2992" placeholder="SELECT * FRO... walk_details" />
+            <marker date="1463486356262" expanded="true" signature="191:204" placeholder="SELECT * FRO... " />
+            <marker date="1463486356262" expanded="true" signature="191:205" placeholder="SELECT * FRO... ${walks}" />
+            <marker date="1463486356262" expanded="true" signature="191:230" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="191:231" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="191:253" placeholder="SELECT * FRO... walks" />
+            <marker date="1463486356262" expanded="true" signature="635:671" placeholder="SELECT MAX(I... " />
+            <marker date="1463486356262" expanded="true" signature="635:672" placeholder="SELECT MAX(I... Customers" />
+            <marker date="1463486356262" expanded="true" signature="1023:1036" placeholder="SELECT * FRO... " />
+            <marker date="1463486356262" expanded="true" signature="1023:1037" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="1023:1065" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="1023:1066" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="1023:1087" placeholder="SELECT * FRO... walks" />
+            <marker date="1463486356262" expanded="true" signature="1466:1478" placeholder="INSERT INTO ${$table_name}... " />
+            <marker date="1463486356262" expanded="true" signature="1466:1493" placeholder="INSERT INTO walk_details... " />
+            <marker date="1463486356262" expanded="true" signature="2241:2255" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2241:2280" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2241:2282" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2254:2255" placeholder="INSERT INTO ${$table_name}... " />
+            <marker date="1463486356262" expanded="true" signature="2899:2912" placeholder="SELECT * FRO... " />
+            <marker date="1463486356262" expanded="true" signature="2899:2938" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2899:2939" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2899:2959" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1463486356262" expanded="true" signature="2899:2992" placeholder="SELECT * FRO... walk_details" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/WalkDAO.php">
+    <entry file="file://$PROJECT_DIR$/classes/LocationHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="81" column="84" selection-start-line="81" selection-start-column="84" selection-end-line="81" selection-end-column="84" />
-          <folding>
-            <marker date="1463343852482" expanded="true" signature="4350:4444" placeholder="UPDATE items... " />
-            <marker date="1463343852482" expanded="true" signature="4813:4899" placeholder="SELECT MAX(s... " />
-            <marker date="1463343852482" expanded="true" signature="4813:4911" placeholder="SELECT MAX(s... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        <state relative-caret-position="416">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/ThemeDAO.php">
+    <entry file="file://$PROJECT_DIR$/controllers/ThemeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        <state relative-caret-position="357">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="31" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Verify.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+        <state relative-caret-position="0">
+          <caret line="57" column="74" selection-start-line="57" selection-start-column="74" selection-end-line="57" selection-end-column="74" />
           <folding>
-            <element signature="e#95#118#0#PHP" expanded="true" />
+            <element signature="e#95#118#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/LanguageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+          <folding>
+            <element signature="e#7#30#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/insertValues.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/LanguageDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/PoiDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+          <folding>
+            <element signature="e#7#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/WaypointDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="43" column="71" selection-start-line="43" selection-start-column="71" selection-end-line="43" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/ThemeDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/WalkDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="69" selection-start-line="80" selection-start-column="69" selection-end-line="80" selection-end-column="69" />
+          <folding>
+            <marker date="1463563574520" expanded="true" signature="1029:1088" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463563574520" expanded="true" signature="1029:1128" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463563574520" expanded="true" signature="7400:7494" placeholder="UPDATE items... " />
+            <marker date="1463563574520" expanded="true" signature="7863:7949" placeholder="SELECT MAX(s... " />
+            <marker date="1463563574520" expanded="true" signature="7863:7961" placeholder="SELECT MAX(s... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/WalkController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+          <folding>
+            <element signature="e#7#30#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

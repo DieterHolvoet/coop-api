@@ -41,6 +41,10 @@ class WaypointDAO {
         ));
     }
 
+    public static function getTranslation($waypoint_id, $language_id) {
+        return DAOTemplate::getTranslation(self::DETAILS_TABLE_NAME, 'waypoint_id', $language_id, $waypoint_id);
+    }
+
     public static function addMedia($waypoint_id, $languages, $media_type, $media_filename) {
         $media_id = MediaDAO::addMedia($languages, $media_type, $media_filename);
         return WaypointDAO::addExistingMedia($waypoint_id, $media_id);

@@ -41,6 +41,10 @@ class PoiDAO {
         ));
     }
 
+    public static function getTranslation($poi_id, $language_id) {
+        return DAOTemplate::getTranslation(self::DETAILS_TABLE_NAME, 'poi_id', $language_id, $poi_id);
+    }
+
     public static function addMedia($poi_id, $languages, $media_type_id, $media_filename) {
         $media_id = MediaDAO::addMedia($languages, $media_type_id, $media_filename);
         return PoiDAO::addExistingMedia($poi_id, $media_id);

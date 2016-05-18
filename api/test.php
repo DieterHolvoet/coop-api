@@ -12,5 +12,4 @@ require_once WWW_ROOT . "api" . DIRECTORY_SEPARATOR . "vendor" . DIRECTORY_SEPAR
 include WWW_ROOT . 'classes' . DIRECTORY_SEPARATOR . "Autoload.php";
 
 // Test
-$loc = WalkDAO::getAverageLocation(1);
-echo $loc[0] . ', ' . $loc[1];
+echo json_encode(ThemeDAO::getTranslation(1, 1));

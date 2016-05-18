@@ -13,10 +13,12 @@ class ThemeDAO {
     const TABLE_NAME = 'themes';
     const DETAILS_TABLE_NAME = 'theme_details';
 
-    public static function getThemeByID($theme_id) {
+    public static function getThemeByID($theme_id, $language_id) {
         $data = DAOTemplate::getByID(self::TABLE_NAME, "theme_id", $theme_id)[0];
         if(!empty($data)) {
-            $data['translations'] = ThemeDAO::getAllTranslations($theme_id);
+            $data = array_merge($data, ThemeDAO::getTranslation($theme_id, $language_id));
+            unset($data['theme_detail_id']);
+            unset($data['language_id']);
         }
         return $data;
     }
