@@ -46,24 +46,11 @@ class PoiDAO {
     }
 
     public static function addMedia($poi_id, $languages, $media_type_id, $media_filename) {
-        $media_id = MediaDAO::addMedia($languages, $media_type_id, $media_filename);
-        return PoiDAO::addExistingMedia($poi_id, $media_id);
-    }
-
-    public static function addExistingMedia($poi_id, $media_id) {
-        DAOTemplate::insert(
-            MediaDAO::MAPS_TABLE_NAME,
-            array(
-                'media_id'=>$media_id,
-                'stop_type'=>StopTypes::POI,
-                'stop_id'=>$poi_id
-            )
-        );
-        return $media_id;
+        return MediaDAO::addMedia(StopTypes::POI, $poi_id, $languages, $media_type_id, $media_filename);
     }
 
     public static function getMedia($poi_id, $language_id) {
-        return MediaDAO::getMedia(StopTypes::POI, $poi_id, $language_id);
+        return MediaDAO::getMediaWithTranslation(StopTypes::POI, $poi_id, $language_id);
     }
 
     // Source: http://stackoverflow.com/a/4571347

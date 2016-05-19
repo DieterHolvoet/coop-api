@@ -13,14 +13,24 @@ class MediaDAO {
     const TYPES_TABLE_NAME = 'media_types';
     const MAPS_TABLE_NAME = 'media_maps';
 
-    public static function addMedia($languages, $media_type_id, $media_filename) {
+    public static function addMedia($stop_type, $stop_id, $languages, $media_type_id, $media_filename) {
         $media_id = DAOTemplate::insert(self::TABLE_NAME, array(
             'media_type_id'=>$media_type_id,
             'media_filename'=>$media_filename
         ));
 
+        $media_maps_id = DAOTemplate::insert(self::MAPS_TABLE_NAME, array(
+            'media_id'=>$media_id,
+            'stop_type'=>$stop_type,
+            'stop_id'=>$stop_id
+        ));
+
         foreach ($languages as $language_code => $translations) {
             MediaDAO::addTranslation($media_id, LanguageDAO::getLanguageIDByCode($language_code), $translations['media_description'], $translations['media_title']);
+        }
+
+        if(empty($media_maps_id) || is_null($media_maps_id) || !isset($media_maps_id) || strlen($media_maps_id) == 0) {
+            throw new Exception('Error! Media not set with ' . $media_id);
         }
 
         if($media_id != null){
@@ -59,17 +69,35 @@ class MediaDAO {
         return DAOTemplate::getTranslation(self::DETAILS_TABLE_NAME, 'media_id', $language_id, $media_id);
     }
 
-    public static function getMedia($stop_type, $stop_id, $language_id) {
-        $media = DAOTemplate::executeSQL('SELECT a.media_id, a.media_filename, d.media_title, d.media_description, c.media_type_id 
+    public static function getMedia($stop_type, $stop_id) {
+        $media = DAOTemplate::executeSQL('SELECT a.media_id, a.media_filename, c.media_type_id, c.media_type_name 
                                                     FROM '. MediaDAO::TABLE_NAME .' a 
                                                     INNER JOIN '. MediaDAO::MAPS_TABLE_NAME .' b ON a.media_id = b.media_id
                                                     INNER JOIN '. MediaDAO::TYPES_TABLE_NAME .' c ON a.media_type_id = c.media_type_id
-                                                    INNER JOIN '. MediaDAO::DETAILS_TABLE_NAME .' d ON a.media_id = d.media_id
+                                                    WHERE b.stop_type = :stop_type AND stop_id = :stop_id',
+            array('stop_type'=>$stop_type, 'stop_id'=>$stop_id));
+
+        for($i = 0; $i < count($media); $i++) {
+            $media[$i]['media_url'] = MediaDAO::getMediaURL($media[$i]['media_filename'], $media[$i]['media_type_id']);
+            unset($media[$i]['media_type_id']);
+            unset($media[$i]['media_filename']);
+        }
+
+        return $media;
+    }
+
+    public static function getMediaWithTranslation($stop_type, $stop_id, $language_id) {
+        $media = DAOTemplate::executeSQL('SELECT a.media_id, a.media_filename, d.media_title, d.media_description, c.media_type_id, c.media_type_name, d.language_id 
+                                                    FROM '. MediaDAO::TABLE_NAME .' a 
+                                                    INNER JOIN '. MediaDAO::MAPS_TABLE_NAME .' b ON a.media_id = b.media_id
+                                                    LEFT JOIN '. MediaDAO::DETAILS_TABLE_NAME .' d ON a.media_id = d.media_id
+                                                    INNER JOIN '. MediaDAO::TYPES_TABLE_NAME .' c ON a.media_type_id = c.media_type_id
                                                     WHERE b.stop_type = :stop_type AND stop_id = :stop_id AND language_id = :language_id',
             array('stop_type'=>$stop_type, 'stop_id'=>$stop_id, 'language_id'=>$language_id));
 
         for($i = 0; $i < count($media); $i++) {
             $media[$i]['media_url'] = MediaDAO::getMediaURL($media[$i]['media_filename'], $media[$i]['media_type_id']);
+            unset($media[$i]['media_type_id']);
             unset($media[$i]['media_filename']);
         }
 

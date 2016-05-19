@@ -12,4 +12,4 @@ require_once WWW_ROOT . "api" . DIRECTORY_SEPARATOR . "vendor" . DIRECTORY_SEPAR
 include WWW_ROOT . 'classes' . DIRECTORY_SEPARATOR . "Autoload.php";
 
 // Test
-echo json_encode(LanguageDAO::getLanguageIDByCode('en'));
+echo json_encode(WaypointDAO::getMedia(17));

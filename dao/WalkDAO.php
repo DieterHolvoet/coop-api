@@ -42,13 +42,10 @@ class WalkDAO {
         }
     }
 
-    public static function addPoi($walk_id, $languages, $location_id) {
-        return WalkDAO::addPoiAtPosition($walk_id, $languages, $location_id, WalkDAO::getWalkStopsCount($walk_id) + 1);
-    }
-
-    public static function addPoiAtPosition($walk_id, $languages, $location_id, $stop_sequence) {
+    public static function addPoi($walk_id, $languages, $location_id, $stop_sequence) {
         $poi_id = PoiDAO::addPoi($languages, $location_id);
-        DAOTemplate::executeSQL("UPDATE " . self::MAPS_TABLE_NAME . " SET stop_sequence=stop_sequence+1 WHERE stop_sequence >= " . $stop_sequence, array());
+        DAOTemplate::executeSQL("UPDATE " . self::MAPS_TABLE_NAME . " SET stop_sequence=stop_sequence+1 WHERE stop_sequence >= :stop_sequence AND walk_id = :walk_id",
+            array('stop_sequence'=>$stop_sequence, 'walk_id'=>$walk_id));
         DAOTemplate::insert(self::MAPS_TABLE_NAME, array(
             'walk_id'=>$walk_id,
             'stop_id'=>$poi_id,
@@ -58,25 +55,17 @@ class WalkDAO {
         return $poi_id;
     }
 
-    public static function addWaypoint($walk_id, $languages, $location_id, $media_id) {
-        $waypoint_id = WaypointDAO::addWaypoint($languages, $location_id, $media_id);
-        return DAOTemplate::insert(self::MAPS_TABLE_NAME, array(
-            'walk_id'=>$walk_id,
-            'stop_id'=>$waypoint_id,
-            'stop_type'=>'waypoint',
-            'stop_sequence'=>WalkDAO::getWalkStopsCount($walk_id) + 1
-        ));
-    }
-
-    public static function addWaypointAtPosition($walk_id, $languages, $location, $media_id, $stop_sequence) {
-        $waypoint_id = WaypointDAO::addWaypoint($languages, $location, $media_id);
-        DAOTemplate::executeSQL("UPDATE " . self::MAPS_TABLE_NAME . " SET stop_sequence=stop_sequence+1 WHERE stop_sequence >= " . $stop_sequence, array());
-        return DAOTemplate::insert(self::MAPS_TABLE_NAME, array(
+    public static function addWaypoint($walk_id, $languages, $location, $stop_sequence) {
+        $waypoint_id = WaypointDAO::addWaypoint($languages, $location);
+        DAOTemplate::executeSQL("UPDATE " . self::MAPS_TABLE_NAME . " SET stop_sequence=stop_sequence+1 WHERE stop_sequence >= :stop_sequence AND walk_id = :walk_id",
+            array('stop_sequence'=>$stop_sequence, 'walk_id'=>$walk_id));
+        DAOTemplate::insert(self::MAPS_TABLE_NAME, array(
             'walk_id'=>$walk_id,
             'stop_id'=>$waypoint_id,
             'stop_type'=>'waypoint',
             'stop_sequence'=>$stop_sequence
         ));
+        return $waypoint_id;
     }
 
     public static function getAll($language_code) {
@@ -229,7 +218,7 @@ class WalkDAO {
 
         $stop['waypoint_id'] = $waypoint_id;
         $stop['location'] = LocationDAO::getLocationByID($location_id, $language_id);
-        $stop['media'] = WaypointDAO::getMedia($waypoint_id, $language_id);
+        $stop['media'] = WaypointDAO::getMedia($waypoint_id);
 
         unset($translation['waypoint_detail_id']);
         unset($translation['language_id']);

@@ -25,21 +25,31 @@ class WalkController
         $walk_id = WalkDAO::addWalk($data['translations'], $data['theme_id'], $data['walk_duration'], $data['walk_distance']);
 
         if(isset($data['stops'])) {
-            foreach ($data['stops'] as $stop) {
+            for($i = 0; $i < count($data['stops']); $i++) {
+                $stop = $data['stops'][$i];
                 $location_id = LocationDAO::addLocation($stop['location']['translations'], $stop['location']['location_lat'], $stop['location']['location_lon'], (int) $stop['location']['location_house_number'], $stop['location']['location_postal_code']);
 
                 if($stop['stop_type'] == StopTypes::POI) {
-                    $poi_id = WalkDAO::addPoi($walk_id, $stop['translations'], $location_id);
+                    $poi_id = WalkDAO::addPoi($walk_id, $stop['translations'], $location_id, $i+1);
 
-                    if(isset($stop['media'])) {
+                    if(isset($stop['media']) && count($stop['media']) > 0) {
                         foreach($stop['media'] as $media) {
                             PoiDAO::addMedia($poi_id, $media['translations'], MediaDAO::getMediaTypeIDByName($media['media_type_name']), $media['media_filename']);
                         }
                     }
 
                 } else if($stop['stop_type'] == StopTypes::WAYPOINT) {
-                    $media_id = MediaDAO::addMedia(array(), WaypointDAO::getMediaTypeID(), $stop['media_filename']);
-                    WalkDAO::addWaypoint($walk_id, $stop['translations'], $location_id, $media_id);
+                    $waypoint_id = WalkDAO::addWaypoint($walk_id, $stop['translations'], $location_id, $i+1);
+
+                    if($waypoint_id == 0) {
+                        return new ErrorObject('Error adding waypoint with location_id '. $location_id .' and walk_id '. $walk_id .'.');
+                    }
+
+                    if(isset($stop['media_filename']) && !empty($stop['media_filename'])) {
+                        WaypointDAO::addMedia($waypoint_id, $stop['media_filename']);
+                    } else {
+                        return new ErrorObject('Please provide one photo for the waypoint at '. $stop['location']['location_street']. ' '. $stop['location']['location_house_number']. ' of walk with id .'. $walk_id .'.');
+                    }
                 }
             }
         }
