@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5d9dfa8-bf4b-4f9a-8d99-cf0dd4dc4610" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/test.php" afterPath="$PROJECT_DIR$/api/test.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/WalkDAO.php" afterPath="$PROJECT_DIR$/dao/WalkDAO.php" />
     </list>
     <ignored path="integration_mobileappweb_groep1_api.iws" />
@@ -69,8 +68,8 @@
       <file leaf-file-name="WalkDAO.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dao/WalkDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+            <state relative-caret-position="425">
+              <caret line="91" column="38" selection-start-line="91" selection-start-column="38" selection-end-line="91" selection-end-column="38" />
               <folding>
                 <element signature="n#addTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
                 <element signature="n#getAllPois#0;n#WalkDAO#0;n#!!top" expanded="false" />
@@ -82,14 +81,14 @@
                 <element signature="n#getTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
                 <element signature="n#stopToPoi#0;n#WalkDAO#0;n#!!top" expanded="false" />
                 <element signature="n#stopToWaypoint#0;n#WalkDAO#0;n#!!top" expanded="false" />
-                <marker date="1463649888879" expanded="true" signature="5033:5046" placeholder="SELECT * FRO... " />
-                <marker date="1463649888879" expanded="true" signature="5033:5047" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
-                <marker date="1463649888879" expanded="true" signature="5033:5149" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-                <marker date="1463649888879" expanded="true" signature="5495:5508" placeholder="SELECT * FRO... " />
-                <marker date="1463649888879" expanded="true" signature="5495:5509" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-                <marker date="1463649888879" expanded="true" signature="5495:5611" placeholder="SELECT * FRO... WHERE" />
-                <marker date="1463649888879" expanded="true" signature="5963:6062" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-                <marker date="1463649888879" expanded="true" signature="7516:7602" placeholder="SELECT MAX(s... " />
+                <marker date="1463650681006" expanded="true" signature="5452:5465" placeholder="SELECT * FRO... " />
+                <marker date="1463650681006" expanded="true" signature="5452:5466" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
+                <marker date="1463650681006" expanded="true" signature="5452:5568" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+                <marker date="1463650681006" expanded="true" signature="5914:5927" placeholder="SELECT * FRO... " />
+                <marker date="1463650681006" expanded="true" signature="5914:5928" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+                <marker date="1463650681006" expanded="true" signature="5914:6030" placeholder="SELECT * FRO... WHERE" />
+                <marker date="1463650681006" expanded="true" signature="6382:6481" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+                <marker date="1463650681006" expanded="true" signature="7935:8021" placeholder="SELECT MAX(s... " />
               </folding>
             </state>
           </provider>
@@ -406,12 +405,12 @@
       <workItem from="1463213584171" duration="4171000" />
       <workItem from="1463301201285" duration="47987000" />
       <workItem from="1463496170104" duration="13942000" />
-      <workItem from="1463648503940" duration="1383000" />
+      <workItem from="1463648503940" duration="2179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98268000" />
+    <option name="totallyTimeSpent" value="99064000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -469,14 +468,14 @@
             <element signature="n#getTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#stopToPoi#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#stopToWaypoint#0;n#WalkDAO#0;n#!!top" expanded="false" />
-            <marker date="1463649888879" expanded="true" signature="5033:5046" placeholder="SELECT * FRO... " />
-            <marker date="1463649888879" expanded="true" signature="5033:5047" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="5033:5149" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="5495:5508" placeholder="SELECT * FRO... " />
-            <marker date="1463649888879" expanded="true" signature="5495:5509" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="5495:5611" placeholder="SELECT * FRO... WHERE" />
-            <marker date="1463649888879" expanded="true" signature="5963:6062" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="7516:7602" placeholder="SELECT MAX(s... " />
+            <marker date="1463650681006" expanded="true" signature="5452:5465" placeholder="SELECT * FRO... " />
+            <marker date="1463650681006" expanded="true" signature="5452:5466" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="5452:5568" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="5914:5927" placeholder="SELECT * FRO... " />
+            <marker date="1463650681006" expanded="true" signature="5914:5928" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="5914:6030" placeholder="SELECT * FRO... WHERE" />
+            <marker date="1463650681006" expanded="true" signature="6382:6481" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="7935:8021" placeholder="SELECT MAX(s... " />
           </folding>
         </state>
       </provider>
@@ -553,14 +552,14 @@
             <element signature="n#getTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#stopToPoi#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#stopToWaypoint#0;n#WalkDAO#0;n#!!top" expanded="false" />
-            <marker date="1463649888879" expanded="true" signature="5033:5046" placeholder="SELECT * FRO... " />
-            <marker date="1463649888879" expanded="true" signature="5033:5047" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="5033:5149" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="5495:5508" placeholder="SELECT * FRO... " />
-            <marker date="1463649888879" expanded="true" signature="5495:5509" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="5495:5611" placeholder="SELECT * FRO... WHERE" />
-            <marker date="1463649888879" expanded="true" signature="5963:6062" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="7516:7602" placeholder="SELECT MAX(s... " />
+            <marker date="1463650681006" expanded="true" signature="5452:5465" placeholder="SELECT * FRO... " />
+            <marker date="1463650681006" expanded="true" signature="5452:5466" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="5452:5568" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="5914:5927" placeholder="SELECT * FRO... " />
+            <marker date="1463650681006" expanded="true" signature="5914:5928" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="5914:6030" placeholder="SELECT * FRO... WHERE" />
+            <marker date="1463650681006" expanded="true" signature="6382:6481" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="7935:8021" placeholder="SELECT MAX(s... " />
           </folding>
         </state>
       </provider>
@@ -672,14 +671,14 @@
             <element signature="n#getTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#stopToPoi#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#stopToWaypoint#0;n#WalkDAO#0;n#!!top" expanded="false" />
-            <marker date="1463649888879" expanded="true" signature="5033:5046" placeholder="SELECT * FRO... " />
-            <marker date="1463649888879" expanded="true" signature="5033:5047" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="5033:5149" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="5495:5508" placeholder="SELECT * FRO... " />
-            <marker date="1463649888879" expanded="true" signature="5495:5509" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="5495:5611" placeholder="SELECT * FRO... WHERE" />
-            <marker date="1463649888879" expanded="true" signature="5963:6062" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="7516:7602" placeholder="SELECT MAX(s... " />
+            <marker date="1463650681006" expanded="true" signature="5452:5465" placeholder="SELECT * FRO... " />
+            <marker date="1463650681006" expanded="true" signature="5452:5466" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="5452:5568" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="5914:5927" placeholder="SELECT * FRO... " />
+            <marker date="1463650681006" expanded="true" signature="5914:5928" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="5914:6030" placeholder="SELECT * FRO... WHERE" />
+            <marker date="1463650681006" expanded="true" signature="6382:6481" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="7935:8021" placeholder="SELECT MAX(s... " />
           </folding>
         </state>
       </provider>
@@ -977,8 +976,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dao/WalkDAO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        <state relative-caret-position="425">
+          <caret line="91" column="38" selection-start-line="91" selection-start-column="38" selection-end-line="91" selection-end-column="38" />
           <folding>
             <element signature="n#addTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#getAllPois#0;n#WalkDAO#0;n#!!top" expanded="false" />
@@ -990,14 +989,14 @@
             <element signature="n#getTranslation#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#stopToPoi#0;n#WalkDAO#0;n#!!top" expanded="false" />
             <element signature="n#stopToWaypoint#0;n#WalkDAO#0;n#!!top" expanded="false" />
-            <marker date="1463649888879" expanded="true" signature="5033:5046" placeholder="SELECT * FRO... " />
-            <marker date="1463649888879" expanded="true" signature="5033:5047" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="5033:5149" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="5495:5508" placeholder="SELECT * FRO... " />
-            <marker date="1463649888879" expanded="true" signature="5495:5509" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="5495:5611" placeholder="SELECT * FRO... WHERE" />
-            <marker date="1463649888879" expanded="true" signature="5963:6062" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
-            <marker date="1463649888879" expanded="true" signature="7516:7602" placeholder="SELECT MAX(s... " />
+            <marker date="1463650681006" expanded="true" signature="5452:5465" placeholder="SELECT * FRO... " />
+            <marker date="1463650681006" expanded="true" signature="5452:5466" placeholder="SELECT * FRO... ${MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="5452:5568" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="5914:5927" placeholder="SELECT * FRO... " />
+            <marker date="1463650681006" expanded="true" signature="5914:5928" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="5914:6030" placeholder="SELECT * FRO... WHERE" />
+            <marker date="1463650681006" expanded="true" signature="6382:6481" placeholder="SELECT * FRO... ${self::MAPS_TABLE_NAME}" />
+            <marker date="1463650681006" expanded="true" signature="7935:8021" placeholder="SELECT MAX(s... " />
           </folding>
         </state>
       </provider>

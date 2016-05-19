@@ -81,9 +81,15 @@ class WalkDAO {
 
     public static function getAll($language_code) {
         $walks = DAOTemplate::getAll(self::TABLE_NAME, "creation_date");
+        $language_id = LanguageDAO::getLanguageIDByCode($language_code);
 
         for($i = 0; $i < count($walks); $i++) {
+            $walks[$i] = array_merge($walks[$i], WalkDAO::getTranslation($walks[$i]['walk_id'], $language_id));
             $walks[$i]['walk_average_location'] = WalkDAO::getAverageLocation($walks[$i]['walk_id']);
+            $walks[$i]['theme'] = ThemeDAO::getThemeByID($walks[$i]['theme_id'], $language_id);
+            unset($walks[$i]['walk_detail_id']);
+            unset($walks[$i]['language_id']);
+            unset($walks[$i]['theme_id']);
         }
 
         return array('walks'=>$walks);
