@@ -87,7 +87,7 @@ class WalkDAO {
             $walks[$i]['walk_average_location'] = WalkDAO::getAverageLocation($walks[$i]['walk_id']);
         }
 
-        return $walks;
+        return array('walks'=>$walks);
     }
     
     public static function getWalkByID($walk_id, $language_id, $isGrouped) {
