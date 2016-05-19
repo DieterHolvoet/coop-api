@@ -83,7 +83,6 @@ class WalkDAO {
         $walks = DAOTemplate::getAll(self::TABLE_NAME, "creation_date");
 
         for($i = 0; $i < count($walks); $i++) {
-            array_merge($walks[$i], LanguageDAO::getLanguageIDByCode($language_code));
             $walks[$i]['walk_average_location'] = WalkDAO::getAverageLocation($walks[$i]['walk_id']);
         }
 
