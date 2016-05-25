@@ -19,9 +19,9 @@ require 'vendor/autoload.php';
 $app = new Slim\App();
 
 /**
- * Step 3: Define the Slim application controllers
+ * Step 3: Define the Slim application routes
  *
- * Here we define several Slim application controllers that respond
+ * Here we define several Slim application routes that respond
  * to appropriate HTTP request methods. In this example, the second
  * argument for `Slim::get`, `Slim::post`, `Slim::put`, `Slim::patch`, and `Slim::delete`
  * is an anonymous function.

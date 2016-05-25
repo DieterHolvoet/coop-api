@@ -1,0 +1,123 @@
+[
+	{
+		"method": "validate",
+		"title": "additionalProperties type-check passes",
+		"schema": {
+			"additionalProperties": {
+				"type": "boolean"
+			}
+		},
+		"data": {
+			"foo": true
+		},
+		"result": {
+			"/valid": true
+		}
+	},
+	{
+		"method": "validate",
+		"title": "additionalProperties type-check fails",
+		"schema": {
+			"additionalProperties": {
+				"type": "boolean"
+			}
+		},
+		"data": {
+			"foo": "bar"
+		},
+		"result": {
+			"/valid": false,
+			"/errors/0/code": 0,
+			"/errors/0/dataPath": "/foo",
+			"/errors/0/schemaPath": "/additionalProperties/type"
+		}
+	},
+	{
+		"method": "validate",
+		"title": "additionalProperties type-check passes non-objects",
+		"schema": {
+			"additionalProperties": {
+				"type": "boolean"
+			}
+		},
+		"data": [null],
+		"result": {
+			"/valid": true
+		}
+	},
+	{
+		"method": "validate",
+		"title": "additionalProperties: false passes on known properties",
+		"schema": {
+			"properties": {
+				"foo": {}
+			},
+			"additionalProperties": false
+		},
+		"data": {
+			"foo": "bar"
+		},
+		"result": {
+			"/valid": true
+		}
+	},
+	{
+		"method": "validate",
+		"title": "additionalProperties: false fails on unknown properties",
+		"schema": {
+			"properties": {
+				"foo": {}
+			},
+			"additionalProperties": false
+		},
+		"data": {
+			"bar": "baz"
+		},
+		"result": {
+			"/valid": false,
+			"/errors/0/code": 303,
+			"/errors/0/dataPath": "/bar",
+			"/errors/0/schemaPath": "/additionalProperties"
+		}
+	},
+	{
+		"method": "validate",
+		"title": "additionalProperties: false passes for non-objects",
+		"schema": {
+			"properties": {
+				"foo": {}
+			},
+			"additionalProperties": false
+		},
+		"data": 68,
+		"result": {
+			"/valid": true
+		}
+	},
+	{
+		"method": "validate",
+		"title": "Github Issue #14",
+		"schema": {
+			"$schema": "http://json-schema.org/draft-04/schema#",
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				}
+			},
+			"required": ["id", "name"],
+			"additionalProperties": false
+		},
+		"data": {
+			"id": "12bfa5db-75e8-47cb-84cd-06520a867c45",
+			"name": "Mike",
+			"age": 71
+		},
+		"result": {
+			"/valid": false
+		}
+	}
+]

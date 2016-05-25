@@ -6,8 +6,7 @@
  * Date: 13/05/2016
  * Time: 13:30
  */
-class DAOTemplate
-{
+class DAOTemplate {
     public static function getByID($table_name, $id_name, $id) {
         $sql = "SELECT * FROM " . $table_name . " WHERE " . $id_name . " = :id";
         $stmt = DatabasePDO::getInstance()->prepare($sql);
@@ -19,6 +18,14 @@ class DAOTemplate
             }
         }
         return null;
+    }
+
+    public static function updateValue($table_name, $column_name, $value, $id_name, $id_value) {
+        $sql = "UPDATE " . $table_name . " SET " . $column_name . "=:value WHERE " . $id_name . " = :id";
+        $stmt = DatabasePDO::getInstance()->prepare($sql);
+        $stmt->bindValue(":value", $value);
+        $stmt->bindValue(":id", $id_value);
+        return $stmt->execute();
     }
 
     public static function getHighestValue($table_name, $field_name) {
@@ -70,6 +77,13 @@ class DAOTemplate
         } else {
             return null;
         }
+    }
+
+    public static function deleteByID($table_name, $id_name, $id) {
+        $sql = "DELETE FROM " . $table_name . " WHERE " . $id_name . " = :id";
+        $stmt = DatabasePDO::getInstance()->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        return $stmt->execute();
     }
 
     public static function getWhere($table_name, $keyvalue) {

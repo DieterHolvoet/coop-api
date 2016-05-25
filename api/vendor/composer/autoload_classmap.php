@@ -6,4 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Jsv4' => $vendorDir . '/geraintluff/jsv4/jsv4.php',
+    'Jsv4Error' => $vendorDir . '/geraintluff/jsv4/jsv4.php',
+    'SchemaStore' => $vendorDir . '/geraintluff/jsv4/schema-store.php',
 );

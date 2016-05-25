@@ -13,6 +13,10 @@ class MediaDAO {
     const TYPES_TABLE_NAME = 'media_types';
     const MAPS_TABLE_NAME = 'media_maps';
 
+    /*
+     * ADD
+     */
+
     public static function addMedia($stop_type, $stop_id, $languages, $media_type_id, $media_filename) {
         $media_id = DAOTemplate::insert(self::TABLE_NAME, array(
             'media_type_id'=>$media_type_id,
@@ -44,6 +48,19 @@ class MediaDAO {
         return DAOTemplate::insert(self::TYPES_TABLE_NAME, array('media_type_name'=>$media_type_name, 'media_type_path'=>$media_type_path));
     }
 
+    public static function addTranslation($media_id, $language_id, $media_description, $media_title) {
+        return DAOTemplate::insert(self::DETAILS_TABLE_NAME, array(
+            'media_id'=>$media_id,
+            'language_id'=>$language_id,
+            'media_description'=>$media_description,
+            'media_title'=>$media_title
+        ));
+    }
+
+    /*
+     * GET
+     */
+
     public static function getMediaTypeByName($media_type_name) {
         return DAOTemplate::getByID(self::TYPES_TABLE_NAME, 'media_type_name', $media_type_name);
     }
@@ -54,15 +71,6 @@ class MediaDAO {
 
     public static function getMediaTypeByID($media_type_id) {
         return DAOTemplate::getByID(self::TYPES_TABLE_NAME, 'media_type_id', $media_type_id)[0];
-    }
-
-    public static function addTranslation($media_id, $language_id, $media_description, $media_title) {
-        return DAOTemplate::insert(self::DETAILS_TABLE_NAME, array(
-            'media_id'=>$media_id,
-            'language_id'=>$language_id,
-            'media_description'=>$media_description,
-            'media_title'=>$media_title
-        ));
     }
 
     public static function getTranslation($media_id, $language_id) {
@@ -103,6 +111,14 @@ class MediaDAO {
 
         return $media;
     }
+
+    /*
+     * DELETE
+     */
+
+    /*
+     * HELPER
+     */
 
     public static function getMediaURL($media_filename, $media_type_id) {
         $media_type_path = MediaDAO::getMediaTypeByID($media_type_id)['media_type_path'];

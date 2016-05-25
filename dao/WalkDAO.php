@@ -8,10 +8,10 @@ class WalkDAO {
     const MAPS_TABLE_NAME = 'walk_maps';
     
     /*
-     * PUBLIC
+     * ADD
      */
 
-    public static function addWalk($languages, $theme_id, $walk_duration, $walk_distance) {
+    public static function addWalk($languages, $theme_id, $walk_duration, $walk_distance, $walk_thumbnail) {
         if(!Verify::integerWithRange($walk_duration, 0, 1440)) {
             throw new Exception('Duration out of range');
         }
@@ -28,6 +28,7 @@ class WalkDAO {
             'theme_id'=>$theme_id,
             'walk_duration'=>$walk_duration,
             'walk_distance'=>$walk_distance,
+            'walk_thumbnail'=>$walk_thumbnail['media_filename'],
             'creation_date'=>DAOTemplate::getCurrentDateTime()
         ));
 
@@ -68,48 +69,6 @@ class WalkDAO {
         return $waypoint_id;
     }
 
-    public static function getAll($language_code) {
-        $walks = DAOTemplate::getAll(self::TABLE_NAME, "creation_date");
-        $language_id = LanguageDAO::getLanguageIDByCode($language_code);
-
-        for($i = 0; $i < count($walks); $i++) {
-            $walks[$i] = array_merge($walks[$i], WalkDAO::getTranslation($walks[$i]['walk_id'], $language_id));
-            $walks[$i]['walk_average_location'] = WalkDAO::getAverageLocation($walks[$i]['walk_id']);
-            $walks[$i]['theme'] = ThemeDAO::getThemeByID($walks[$i]['theme_id'], $language_id);
-            unset($walks[$i]['walk_detail_id']);
-            unset($walks[$i]['language_id']);
-            unset($walks[$i]['theme_id']);
-        }
-
-        return array('walks'=>$walks);
-    }
-    
-    public static function getWalkByID($walk_id, $language_id, $isGrouped) {
-        $data = DAOTemplate::getByID(self::TABLE_NAME, "walk_id", $walk_id)[0];
-        if(!empty($data)) {
-            $data['language_id'] = $language_id;
-            $data = array_merge($data, WalkDAO::getTranslation($walk_id, $language_id));
-            $data['walk_average_location'] = WalkDAO::getAverageLocation($walk_id);
-
-            if($isGrouped) {
-                $data['stops'] = WalkDAO::getAllStops($walk_id, $language_id);
-            } else {
-                $data['pois'] = WalkDAO::getAllPois($walk_id, $language_id);
-                $data['waypoints'] = WalkDAO::getAllWaypoints($walk_id, $language_id);
-            }
-
-            $data['theme'] = ThemeDAO::getThemeByID($data['theme_id'], $language_id);
-            
-            unset($data['walk_detail_id']);
-            unset($data['theme_id']);
-        }
-        return $data;
-    }
-    
-    /*
-     * PRIVATE
-     */
-
     private static function addTranslation($walk_id, $language_id, $walk_description, $walk_title) {
         return DAOTemplate::insert(self::DETAILS_TABLE_NAME, array(
             'walk_id'=>$walk_id,
@@ -119,7 +78,56 @@ class WalkDAO {
         ));
     }
 
-    private static function getAllPois($walk_id, $language_id) {
+    /*
+     * GET
+     */
+
+    public static function getAll($language_code) {
+        $walks = DAOTemplate::getAll(self::TABLE_NAME, "creation_date");
+        $language_id = LanguageDAO::getLanguageIDByCode($language_code);
+
+        for($i = 0; $i < count($walks); $i++) {
+            $walks[$i] = array_merge($walks[$i], WalkDAO::getTranslation($walks[$i]['walk_id'], $language_id));
+            $walks[$i]['theme'] = ThemeDAO::getThemeByID($walks[$i]['theme_id'], $language_id);
+            $walks[$i]['walk_thumbnail'] = MediaDAO::getMediaURL($walks[$i]['walk_thumbnail'], MediaDAO::getMediaTypeIDByName('Photo'));
+
+            $avg_location = WalkDAO::getAverageLocation($walks[$i]['walk_id']);
+            if($avg_location !== false) {
+                $walks[$i]['walk_average_location'] = WalkDAO::getAverageLocation($walks[$i]['walk_id']);
+            }
+
+            unset($walks[$i]['walk_detail_id']);
+            unset($walks[$i]['language_id']);
+            unset($walks[$i]['theme_id']);
+        }
+
+        return array('walks'=>$walks);
+    }
+
+    public static function getWalkByID($walk_id, $language_id, $isGrouped) {
+        $data = DAOTemplate::getByID(self::TABLE_NAME, "walk_id", $walk_id)[0];
+        if(!empty($data)) {
+            $data['language_id'] = $language_id;
+            $data = array_merge($data, WalkDAO::getTranslation($walk_id, $language_id));
+            $data['walk_average_location'] = WalkDAO::getAverageLocation($walk_id);
+            $data['walk_thumbnail'] = MediaDAO::getMediaURL($data['walk_thumbnail'], MediaDAO::getMediaTypeIDByName('Photo'));
+
+            if($isGrouped) {
+                $data = array_merge($data, WalkDAO::getAllStops($walk_id, $language_id));
+            } else {
+                $data = array_merge($data, WalkDAO::getAllPois($walk_id, $language_id));
+                $data = array_merge($data, WalkDAO::getAllWaypoints($walk_id, $language_id));
+            }
+
+            $data['theme'] = ThemeDAO::getThemeByID($data['theme_id'], $language_id);
+
+            unset($data['walk_detail_id']);
+            unset($data['theme_id']);
+        }
+        return $data;
+    }
+
+    public static function getAllPois($walk_id, $language_id) {
         $stops = DAOTemplate::executeSQL("SELECT * FROM ". self::MAPS_TABLE_NAME ." WHERE walk_id = :walk_id AND stop_type = :stop_type ORDER BY stop_sequence",
             array('walk_id'=>$walk_id, 'stop_type'=>StopTypes::POI));
 
@@ -127,10 +135,10 @@ class WalkDAO {
             $stops[$i] = WalkDAO::stopToPoi($stops[$i], $language_id);
         }
 
-        return $stops;
+        return array('pois'=>$stops);
     }
 
-    private static function getAllWaypoints($walk_id, $language_id) {
+    public static function getAllWaypoints($walk_id, $language_id) {
         $stops = DAOTemplate::executeSQL("SELECT * FROM ". self::MAPS_TABLE_NAME ." WHERE walk_id = :walk_id AND stop_type = :stop_type ORDER BY stop_sequence",
             array('walk_id'=>$walk_id, 'stop_type'=>StopTypes::WAYPOINT));
 
@@ -138,7 +146,7 @@ class WalkDAO {
             $stops[$i] = WalkDAO::stopToWaypoint($stops[$i], $language_id);
         }
 
-        return $stops;
+        return array('waypoints'=>$stops);
     }
 
     private static function getAllStops($walk_id, $language_id) {
@@ -159,7 +167,7 @@ class WalkDAO {
 
         }
 
-        return $stops;
+        return array('stops'=>$stops);
     }
 
     private static function getAllTranslations($walk_id) {
@@ -174,13 +182,64 @@ class WalkDAO {
         return $translations;
     }
 
+    public static function getTranslation($walk_id, $language_id) {
+        return DAOTemplate::getTranslation(self::DETAILS_TABLE_NAME, 'walk_id', $language_id, $walk_id);
+    }
+
+    /*
+     * DELETE
+     */
+    
+    public static function deleteWalkByID($walk_id) {
+        $success = DAOTemplate::deleteByID(self::TABLE_NAME, 'walk_id', $walk_id);
+
+        if(!$success) return new ErrorObject('Failed deleting walk from ' . self::TABLE_NAME);
+
+        foreach (WalkDAO::getAllTranslations($walk_id) as $translation) {
+            if(!WalkDAO::deleteTranslation($translation['walk_detail_id'])) return new ErrorObject('Failed deleting walk translation with ID ' . $translation['walk_detail_id']);
+        }
+
+        foreach (WalkDAO::getAllWaypoints($walk_id, LanguageDAO::getLanguageByID(0)) as $waypoint) {
+            WaypointDAO::deleteWaypointByID($waypoint['waypoint_id']);
+            WaypointDAO::deleteTranslationsByWaypointID($waypoint['waypoint_id']);
+        }
+
+        foreach (WalkDAO::getAllPois($walk_id, LanguageDAO::getLanguageByID(0)) as $poi) {
+            PoiDAO::deletePoiByID($poi['poi_id']);
+            PoiDAO::deleteTranslationsByPoiID($poi['poi_id']);
+        }
+        
+        return true;
+    }
+
+    private static function deleteTranslation($walk_detail_id) {
+        return DAOTemplate::deleteByID(self::DETAILS_TABLE_NAME, 'walk_detail_id', $walk_detail_id);
+    }
+    
+    /*
+     * HELPERS
+     */
+
     private static function getAverageLocation($walk_id) {
         $locations = array();
-        foreach(WalkDAO::getAllStops($walk_id, 1) as $stop) {
-            array_push($locations, array($stop['location']['location_lat'], $stop['location']['location_lon']));
+        $stops = WalkDAO::getAllStops($walk_id, 1)['stops'];
+
+        if(empty($stops)) {
+            return false;
+
+        } else {
+            foreach($stops as $stop) {
+                array_push($locations, array($stop['location']['location_lat'], $stop['location']['location_lon']));
+            }
         }
-        $center = LocationHelper::getCenterFromDegrees($locations);
-        return array('lat'=>$center[0], 'lon'=>$center[1]);
+
+        if(empty($locations)) {
+            return false;
+
+        } else {
+            $center = LocationHelper::getCenterFromDegrees($locations);
+            return array('lat'=>$center[0], 'lon'=>$center[1]);
+        }
     }
 
     private static function getWalkStopsCount($walk_id) {
@@ -188,20 +247,18 @@ class WalkDAO {
         return $result[0]['count'];
     }
 
-    public static function getTranslation($walk_id, $language_id) {
-        return DAOTemplate::getTranslation(self::DETAILS_TABLE_NAME, 'walk_id', $language_id, $walk_id);
-    }
-
     private static function stopToPoi($stop, $language_id) {
         $poi_id = $stop['stop_id'];
-        $location_id = PoiDAO::getPoiByID($poi_id)[0]['location_id'];
+        $poi = PoiDAO::getPoiByID($poi_id)[0];
+        $location_id = $poi['location_id'];
         $translation = PoiDAO::getTranslation($poi_id, $language_id);
 
         $stop['poi_id'] = $poi_id;
         $stop['location'] = LocationDAO::getLocationByID($location_id, $language_id);
         $stop['media'] = PoiDAO::getMedia($poi_id, $language_id);
+        $stop['poi_unlock_code'] = $poi['poi_unlock_code'];
 
-        unset($translation['poi_detail_id']);
+        // unset($translation['poi_detail_id']);
         unset($translation['language_id']);
         unset($stop['stop_id']);
         unset($stop['walk_id']);
@@ -220,7 +277,7 @@ class WalkDAO {
         $stop['location'] = LocationDAO::getLocationByID($location_id, $language_id);
         $stop['media'] = WaypointDAO::getMedia($waypoint_id);
 
-        unset($translation['waypoint_detail_id']);
+        // unset($translation['waypoint_detail_id']);
         unset($translation['language_id']);
         unset($stop['stop_id']);
         unset($stop['walk_id']);

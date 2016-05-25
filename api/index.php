@@ -25,6 +25,25 @@ $configuration = [
 
 // Variables
 $c = new \Slim\Container($configuration);
+
+$c['errorHandler'] = function ($c) {
+	return function ($request, $response, $exception) use ($c) {
+		$data = [
+			'error' => array(
+				'code' => $exception->getCode(),
+				'message' => $exception->getMessage(),
+				'file' => $exception->getFile(),
+				'line' => $exception->getLine(),
+				'trace' => explode("\n", $exception->getTraceAsString())
+			)
+		];
+
+		return $c->get('response')->withStatus(500)
+			->withHeader('Content-Type', 'application/json')
+			->write(json_encode($data));
+	};
+};
+
 $app = new \Slim\App($c);
 
 /*
@@ -37,26 +56,37 @@ $app->get('/', function ($request, $response, $args) {
 
 // Walks
 $app->group('/walks', function () {
-	$this->get("/getAll", 'WalkController:getAll')->setName("getAllWalks");
-	$this->get("/getByID/{id:[0-9]+}", 'WalkController:getByID')->setName("getWalkByID");
-	$this->post("/add", 'WalkController:add')->setName("addWalk");
-	$this->post("/addPOI", 'WalkController:addPOI')->setName("addPOI");
-	$this->post("/addWaypoint", 'WalkController:addWaypoint')->setName("addWaypoint");
+	$this->get("/", 'WalkController:getAll')->setName("getAllWalks");
+	$this->post("/", 'WalkController:add')->setName("addWalk");
+	$this->group('/{id:[0-9]+}', function () {
+		$this->get("/", 'WalkController:getByID')->setName("getWalkByID");
+		$this->delete("/", 'WalkController:deleteByID')->setName("deleteWalkByID");
+		$this->group('/pois', function () {
+			$this->post("/", 'WalkController:addPoiToWalk')->setName("addPoiToWalk");
+			$this->get("/", 'WalkController:getPoisByWalkID')->setName("getPoisByWalkID");
+		});
+		$this->group('/waypoints', function () {
+			$this->post("/", 'WalkController:addWaypointToWalk')->setName("addWaypointToWalk");
+			$this->get("/", 'WalkController:getWaypointsByWalkID')->setName("getWaypointsByWalkID");
+		});
+	});
 });
 
 // Themes
 $app->group('/themes', function () {
-	$this->get("/getAll", 'ThemeController:getAll')->setName("getAllThemes");
-	$this->get("/getByID/{id:[0-9]+}", 'ThemeController:getByID')->setName("getThemeByID");
-	$this->post("/add", 'ThemeController:add')->setName("addWalk");
+	$this->get("/", 'ThemeController:getAll')->setName("getAllThemes");
+	$this->get("/{id:[0-9]+}", 'ThemeController:getByID')->setName("getThemeByID");
+	$this->post("/", 'ThemeController:add')->setName("addWalk");
 });
 
 // Languages
 $app->group('/languages', function () {
-	$this->get("/getAll", 'LanguageController:getAll')->setName("getAllLanguages");
-	$this->get("/getByID/{id:[0-9]+}", 'LanguageController:getByID')->setName("getLanguageByID");
-	$this->post("/add", 'LanguageController:add')->setName("addLanguage");
+	$this->get("/", 'LanguageController:getAll')->setName("getAllLanguages");
+	$this->get("/{id:[0-9]+}", 'LanguageController:getByID')->setName("getLanguageByID");
+	$this->post("/", 'LanguageController:add')->setName("addLanguage");
 });
+
+$app->post("/test", 'WalkController:test')->setName("test");
 
 /*
  * FINISH

@@ -328,7 +328,7 @@ class App
 
         // Dispatch the Router first if the setting for this is on
         if ($this->container->get('settings')['determineRouteBeforeAppMiddleware'] === true) {
-            // Dispatch router (note: you won't be able to alter controllers after this)
+            // Dispatch router (note: you won't be able to alter routes after this)
             $request = $this->dispatchRouterAndPrepareRoute($request, $router);
         }
 
@@ -414,7 +414,7 @@ class App
      *
      * This method implements the middleware interface. It receives
      * Request and Response objects, and it returns a Response object
-     * after compiling the controllers registered in the Router and dispatching
+     * after compiling the routes registered in the Router and dispatching
      * the Request object to the appropriate Route callback routine.
      *
      * @param  ServerRequestInterface $request  The most recent Request object
@@ -465,7 +465,7 @@ class App
      * the context of the current request. This WILL NOT issue a remote HTTP
      * request. Instead, it will route the provided URL, method, headers,
      * cookies, body, and server variables against the set of registered
-     * application controllers. The result response object is returned.
+     * application routes. The result response object is returned.
      *
      * @param  string            $method      The request method (e.g., GET, POST, PUT, etc.)
      * @param  string            $path        The request URI path

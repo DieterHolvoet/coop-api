@@ -10,14 +10,13 @@ use \Slim\Http\Response;
  * Time: 20:30
  */
 
-class ThemeController
-{
+class ThemeController {
     public function getAll(Request $request, Response $response) {
         return self::encode(ThemeDAO::getAll($request->getQueryParam('lang')), $response);
     }
 
     public function getByID(Request $request, Response $response) {
-        return self::encode(ThemeDAO::getThemeByID($request->getAttribute('id')), $response);
+        return self::encode(ThemeDAO::getThemeByID($request->getAttribute('id'), LanguageDAO::getLanguageIDByCode($request->getQueryParam('lang'))), $response);
     }
 
     public function add(Request $request, Response $response) {

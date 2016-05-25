@@ -11,6 +11,10 @@ class LocationDAO {
     const TABLE_NAME = 'locations';
     const DETAILS_TABLE_NAME = 'location_details';
 
+    /*
+     * ADD
+     */
+
     public static function addLocation($languages, $location_lat, $location_lon, $location_house_number, $location_postal_code) {
         $location_id = DAOTemplate::insert(self::TABLE_NAME, array(
             'location_lat'=>$location_lat,
@@ -30,6 +34,19 @@ class LocationDAO {
         }
     }
 
+    public static function addTranslation($location_id, $language_id, $location_street, $location_city) {
+        return DAOTemplate::insert(self::DETAILS_TABLE_NAME, array(
+            'location_id'=>$location_id,
+            'language_id'=>$language_id,
+            'location_street'=>$location_street,
+            'location_city'=>$location_city
+        ));
+    }
+
+    /*
+     * GET
+     */
+
     public static function getLocationByID($location_id, $language_id) {
         $location = DAOTemplate::getByID(self::TABLE_NAME, 'location_id', $location_id)[0];
         $translation = LocationDAO::getTranslation($location_id, $language_id);
@@ -40,16 +57,15 @@ class LocationDAO {
         return array_merge($location, $translation);
     }
 
-    public static function addTranslation($location_id, $language_id, $location_street, $location_city) {
-        return DAOTemplate::insert(self::DETAILS_TABLE_NAME, array(
-            'location_id'=>$location_id,
-            'language_id'=>$language_id,
-            'location_street'=>$location_street,
-            'location_city'=>$location_city
-        ));
-    }
-
     public static function getTranslation($location_id, $language_id) {
         return DAOTemplate::getTranslation(self::DETAILS_TABLE_NAME, 'location_id', $language_id, $location_id);
     }
+
+    /*
+     * DELETE
+     */
+
+    /*
+     * HELPER
+     */
 }

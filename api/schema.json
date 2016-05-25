@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://iwtsl.ehb.be/~dieter.holvoet/IMAW/api",
+
+  "definitions": {
+    "translations": {
+      "type": "object",
+      "properties": {
+        "nl":           { "type": "object" },
+        "fr":           { "type": "object" },
+        "en":           { "type": "object" }
+      }
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "translations":           { "$ref": "#/definitions/translations" },
+        "location_lat":           { "type": "number" },
+        "location_lon":           { "type": "number" },
+        "location_house_number":  { "type": "number" },
+        "location_postal_code":   { "type": "number" }
+      },
+      "required": ["translations", "location_lat", "location_lon", "location_house_number", "location_postal_code"]
+    },
+    "media": {
+      "type": "object",
+      "properties": {
+        "translations":           { "$ref": "#/definitions/translations" },
+        "media_type_name":        { "type": "string" },
+        "media_filename":         { "type": "string" }
+      },
+      "required": ["translations", "media_type_name", "media_filename"]
+    },
+    "waypoint": {
+      "type": "object",
+      "properties": {
+        "stop_type":              { "enum": ["waypoint", "poi"] },
+        "translations":           { "$ref": "#/definitions/translations" },
+        "location":               { "$ref": "#/definitions/location" },
+        "media_filename":         { "type": "string" }
+      },
+      "required": ["stop_type", "media_filename", "translations", "location"]
+    },
+    "poi": {
+      "type": "object",
+      "properties": {
+        "stop_type":              { "enum": ["waypoint", "poi"] },
+        "translations":           { "$ref": "#/definitions/translations" },
+        "location":               { "$ref": "#/definitions/location" },
+        "media":                  {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/media"
+          }
+        }
+      },
+      "required": ["stop_type", "translations", "location", "media"]
+    }
+  },
+
+  "type": "object",
+
+  "properties": {
+    "translations": { "$ref": "#/definitions/translations" },
+    "theme_id":         { "type": "integer" },
+    "walk_duration":    { "type": "integer" },
+    "walk_distance":    { "type": "integer" },
+    "stops":            {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/definitions/waypoint" },
+          { "$ref": "#/definitions/poi" }
+        ]
+      }
+    }
+  },
+  "required": ["translations", "theme_id", "walk_duration", "walk_distance", "stops"]
+}

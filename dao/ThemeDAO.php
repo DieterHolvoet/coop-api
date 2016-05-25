@@ -13,6 +13,36 @@ class ThemeDAO {
     const TABLE_NAME = 'themes';
     const DETAILS_TABLE_NAME = 'theme_details';
 
+    /*
+     * ADD
+     */
+
+    public static function addTheme($languages, $theme_color){
+        $theme_id = DAOTemplate::insert(self::TABLE_NAME, array(
+            'theme_color'=>$theme_color,
+        ));
+        foreach ($languages as $language_code => $translations) {
+            ThemeDAO::addTranslation($theme_id, LanguageDAO::getLanguageIDByCode($language_code), $translations['theme_name']);
+        }
+
+        if($theme_id != null){
+            return $theme_id;
+        } else {
+            return false;
+        }
+    }
+
+    public static function addTranslation($theme_id, $language_id, $theme_name) {
+        return DAOTemplate::insert(self::DETAILS_TABLE_NAME, array(
+            'theme_id'=>$theme_id,
+            'language_id'=>$language_id,
+            'theme_name'=>$theme_name));
+    }
+
+    /*
+     * GET
+     */
+
     public static function getThemeByID($theme_id, $language_id) {
         $data = DAOTemplate::getByID(self::TABLE_NAME, "theme_id", $theme_id)[0];
         if(!empty($data)) {
@@ -40,29 +70,7 @@ class ThemeDAO {
             $themes[$i]['theme_name'] = ThemeDAO::getTranslation($themes[$i]['theme_id'], LanguageDAO::getLanguageIDByCode($language_code))['theme_name'];
         }
 
-        return $themes;
-    }
-
-    public static function addTheme($languages, $theme_color){
-        $theme_id = DAOTemplate::insert(self::TABLE_NAME, array(
-            'theme_color'=>$theme_color,
-        ));
-        foreach ($languages as $language_code => $translations) {
-            ThemeDAO::addTranslation($theme_id, LanguageDAO::getLanguageIDByCode($language_code), $translations['theme_name']);
-        }
-
-        if($theme_id != null){
-            return $theme_id;
-        } else {
-            return false;
-        }
-    }
-
-    public static function addTranslation($theme_id, $language_id, $theme_name) {
-        return DAOTemplate::insert(self::DETAILS_TABLE_NAME, array(
-            'theme_id'=>$theme_id,
-            'language_id'=>$language_id,
-            'theme_name'=>$theme_name));
+        return array("themes"=>$themes);
     }
 
     public static function getTranslation($theme_id, $language_id) {
@@ -81,4 +89,12 @@ class ThemeDAO {
         }
         return $translations;
     }
+
+    /*
+     * DELETE
+     */
+
+    /*
+     * HELPER
+     */
 }

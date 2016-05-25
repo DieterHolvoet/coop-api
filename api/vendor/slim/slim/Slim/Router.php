@@ -25,7 +25,7 @@ use Slim\Interfaces\RouteInterface;
  *
  * This class organizes Slim application route objects. It is responsible
  * for registering route objects, assigning names to route objects,
- * finding controllers that match the current HTTP request, and creating
+ * finding routes that match the current HTTP request, and creating
  * URLs for a named route.
  */
 class Router implements RouterInterface
@@ -263,7 +263,7 @@ class Router implements RouterInterface
     /**
      * Process route groups
      *
-     * @return string A group pattern to prefix controllers with
+     * @return string A group pattern to prefix routes with
      */
     protected function processGroups()
     {
@@ -330,7 +330,7 @@ class Router implements RouterInterface
         $pattern = $route->getPattern();
 
         $routeDatas = $this->routeParser->parse($pattern);
-        // $routeDatas is an array of all possible controllers that can be made. There is
+        // $routeDatas is an array of all possible routes that can be made. There is
         // one routedata for each optional parameter plus one for no optional parameters.
         //
         // The most specific is last, so we look for that first.
